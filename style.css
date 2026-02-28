@@ -19,13 +19,36 @@ body {
     letter-spacing: 2px;
 }
 
-/* --- ส่วนที่ปรับปรุงใหม่ --- */
+/* --- แก้ไขส่วนนี้ทับของเดิม --- */
 .manga-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    /* ล็อกให้มี 3 คอลัมน์ คอลัมน์ละ 280px เท่าขนาดรูป */
+    grid-template-columns: repeat(3, 280px); 
     justify-content: center;
     gap: 40px;
-    max-width: 1200px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* บังคับให้ปุ่มลิงก์ไปต่อท้ายในช่องที่ว่าง */
+.footer-links {
+    display: flex;
+    flex-direction: column; /* เรียงปุ่มเป็นแนวตั้งแบบในรูป */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    /* ถ้าอยากให้ปุ่มอยู่ในช่องที่ 3 ของแถวที่ 2 */
+    grid-column: 3; 
+    grid-row: 2;
+}
+
+/* ปรับขนาดปุ่มลิงก์ให้พอดีกับช่อง */
+.footer-links a {
+    width: 80%; /* ให้ปุ่มกว้างพอดีๆ */
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
 }
 
 /* เพิ่มกรอบหลักสำหรับแต่ละเรื่อง */
