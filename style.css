@@ -1,18 +1,28 @@
+/* แก้ไขส่วนบนสุด */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* ห้ามเลื่อนซ้ายขวาเด็ดขาด */
+    min-height: 100vh;
+    overflow-x: hidden; /* ล็อกแกน X */
     position: relative;
+    box-sizing: border-box; /* บังคับให้ทุกอย่างคำนวณขนาดจากขอบ */
+}
+
+/* ใส่เพื่อให้ทุก Element ในเว็บใช้การคำนวณแบบเดียวกัน */
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
     font-family: 'Tahoma', sans-serif;
-    padding: 40px 0; /* เปลี่ยน padding ซ้ายขวาเป็น 0 */
+    margin: 0;
+    padding: 40px 0; /* บนล่าง 40 ซ้ายขวา 0 */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* ...โค้ดส่วนอื่นคงเดิม... */
+    color: #fff;
+    background-color: #050505;
 }
 
 body::after {
@@ -65,10 +75,11 @@ body::before {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    max-width: 1000px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* จำกัดความกว้างสูงสุดในคอม */
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding: 0 10px; /* ให้มีช่องว่างนิดเดียวพอ */
 }
 
 /* 4. สไตล์ของแต่ละรายการมังงะ */
