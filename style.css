@@ -55,14 +55,16 @@ body::before {
     font-weight: bold;
     margin-bottom: 60px;
     letter-spacing: 2px;
+    text-align: center;
 }
 
+/* 3. การจัดวาง Grid/Flex มังงะ */
 .manga-container {
-    display: flex; /* เปลี่ยนเป็น flex เพื่อให้จัดกึ่งกลางแถวสุดท้ายได้ง่ายขึ้น */
-    flex-wrap: wrap; /* ให้รูปตกลงมาบรรทัดใหม่เมื่อเต็มความกว้าง */
-    justify-content: center; /* จัดกึ่งกลางทุกรูปในแต่ละแถว */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* จัดกลุ่มมังงะให้อยู่กึ่งกลางเสมอ */
     gap: 40px;
-    max-width: 1000px; /* คุมความกว้างให้พอดีกับ 3 รูป (280px * 3 + gap) */
+    max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 50px;
 }
@@ -70,28 +72,11 @@ body::before {
 .manga-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* จัดรูปและชื่อให้ตรงกันแนวดิ่ง */
     gap: 15px;
-    flex: 0 0 280px; /* ล็อกความกว้างของแต่ละไอเทมไว้ที่ 280px ไม่ให้ยืดหด */
-}
-
-/* จัดการส่วนลิงก์ด้านล่างให้แยกออกมาเป็นแถวใหม่กึ่งกลางเสมอ */
-.footer-links {
-    width: 100%; /* บังคับให้กินพื้นที่เต็มบรรทัดเพื่อผลักตัวเองลงไปข้างล่าง */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 50px;
-    padding-bottom: 80px;
-}
-
-.manga-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    flex: 0 0 280px;
     max-width: 280px;
+    text-align: center; /* บังคับตัวหนังสือในก้อนนี้กึ่งกลางทั้งหมด */
 }
 
 .manga-card {
@@ -124,20 +109,22 @@ body::before {
 
 .manga-title {
     color: #fff;
-    text-align: center;
     font-size: 16px;
     font-weight: bold;
     text-shadow: 0 0 10px #ff00ff;
-    max-width: 100%;
+    width: 100%; /* แผ่ให้เต็มความกว้าง manga-item */
+    word-wrap: break-word; /* ตัดบรรทัดถ้าชื่อยาวไป */
+    margin: 0;
+    line-height: 1.4;
 }
 
 .manga-item:hover .manga-title {
     text-shadow: 0 0 10px #00ff00;
 }
 
-/* 4. ปุ่มลิงก์ด้านล่าง (Clean Up แล้ว) */
+/* 4. ปุ่มลิงก์ด้านล่าง */
 .footer-links {
-    grid-column: span 3; /* ให้ขยายเต็ม 3 ช่อง เพื่อลงมาอยู่แถวใหม่ */
+    width: 100%; /* บังคับแยกแถวใหม่ */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -163,56 +150,54 @@ body::before {
 .link-blue { color: #00d2ff; border-color: #00d2ff; box-shadow: 0 0 10px rgba(0,210,255,0.3); }
 .link-blue:hover { background: #00d2ff; color: #000; box-shadow: 0 0 20px #00d2ff; }
 
-.link-purple { color: #a020f0; border-color: #a020f0; box-shadow: 0 0 10px rgba(160,32,240,0.3); }
+.link-purple { color: #a020f0; border-color: #a020f0; box-shadow: 0 0 10px rgba(160, 32, 240, 0.3); }
 .link-purple:hover { background: #a020f0; color: #fff; box-shadow: 0 0 20px #a020f0; }
 
-.link-light-purple { color: #e0b0ff; border-color: #e0b0ff; box-shadow: 0 0 10px rgba(224,176,255,0.3); }
+.link-light-purple { color: #e0b0ff; border-color: #e0b0ff; box-shadow: 0 0 10px rgba(224, 176, 255, 0.3); }
 .link-light-purple:hover { background: #e0b0ff; color: #000; box-shadow: 0 0 20px #e0b0ff; }
 
-/* --- ส่วนปรับแต่งสำหรับหน้าจอมือถือ --- */
+/* --- 5. Responsive สำหรับมือถือ --- */
 @media (max-width: 768px) {
     .header {
-        font-size: 28px; /* ลดขนาดหัวข้อลงหน่อย */
+        font-size: 28px;
         margin-bottom: 30px;
     }
 
     .manga-container {
-        gap: 20px; /* ลดระยะห่างระหว่างรูป */
+        gap: 20px;
         padding: 0 10px;
     }
 
     .manga-item {
-        flex: 0 0 45%; /* ในมือถือให้โชว์แถวละ 2 รูปพอดีๆ */
+        flex: 0 0 45%; /* แถวละ 2 รูป */
         max-width: 45%;
     }
 
     .manga-card {
-        width: 100%; /* ให้รูปขยายเต็มพื้นที่ 45% */
-        height: auto; /* ให้ความสูงปรับตามสัดส่วนรูป */
-        aspect-ratio: 2 / 3; /* รักษาทรงรูปมังงะไว้ */
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 3;
     }
 
     .manga-title {
-        font-size: 14px; /* ลดขนาดตัวหนังสือชื่อเรื่อง */
+        font-size: 14px;
     }
 
     .footer-links {
-        flex-direction: column; /* ในมือถือให้ปุ่มเรียงลงมาแนวตั้ง จะได้กดง่ายๆ */
+        flex-direction: column;
         align-items: center;
         gap: 15px;
-        margin-top: 30px;
     }
 
     .footer-links a {
-        width: 80%; /* ให้ปุ่มกว้างเกือบเต็มจอ จะได้ไม่จิ๋วเกินไป */
+        width: 80%;
         min-width: unset;
     }
 }
 
-/* สำหรับมือถือจอเล็กมาก (แถวละ 1 รูป) */
 @media (max-width: 480px) {
     .manga-item {
-        flex: 0 0 90%;
+        flex: 0 0 90%; /* จอเล็กมากโชว์แถวละ 1 รูป */
         max-width: 90%;
     }
 }
