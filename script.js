@@ -24,12 +24,22 @@ async function loadMangaData() {
 // 3. ฟังก์ชันสำหรับวาดการ์ดมังงะ (Render)
 function renderManga(mangaList) {
     const container = document.getElementById('manga-list');
+    
+    // --- เพิ่มส่วนนี้: เช็คว่าถ้าค้นหาแล้วไม่เจอ ให้โชว์ข้อความบอกผู้ใช้ ---
+    if (mangaList.length === 0) {
+        container.innerHTML = `
+            <div style="text-align:center; width:100%; padding: 40px; opacity: 0.7;">
+                 ไม่พบชื่อมังงะที่คุณค้นหา...
+            </div>`;
+        return;
+    }
+    // ---------------------------------------------------------
+
     container.innerHTML = ''; // ล้างหน้าเว็บให้ว่างก่อนวาดใหม่
 
     mangaList.forEach(manga => {
         const lnk = manga.links || {};
         
-        // เช็คว่ามีลิงก์ไหนบ้าง ถ้ามีค่อยสร้างปุ่ม
         let buttonsHTML = '';
         if (lnk.mynovel) buttonsHTML += `<a href="${lnk.mynovel}" target="_blank" class="link-blue">MYNOVEL</a>`;
         if (lnk.readrealm) buttonsHTML += `<a href="${lnk.readrealm}" target="_blank" class="link-purple">ReadRealm</a>`;
@@ -38,7 +48,7 @@ function renderManga(mangaList) {
         const mangaHTML = `
             <div class="manga-item">
                 <div class="manga-card">
-                    <img src="${manga.image}" alt="${manga.title}">
+                    <img src="${manga.image}" alt="${manga.title}" loading="lazy">
                     <div class="manga-overlay">
                         <div class="overlay-content">
                             <p>เลือกช่องทางการอ่าน</p>
@@ -55,7 +65,6 @@ function renderManga(mangaList) {
     // สำคัญ: พอมันวาดรูปเสร็จใหม่ๆ ต้องสั่งให้ระบบคลิกมือถือเริ่มทำงานกับปุ่มใหม่ด้วย
     initMobileClick();
 }
-
 // 4. ระบบค้นหา (Search)
 document.getElementById('manga-search').addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
