@@ -58,25 +58,27 @@ body::before {
     text-align: center;
 }
 
-/* 3. การจัดวาง Grid/Flex มังงะ */
+/* 3. การจัดวาง Container */
 .manga-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* จัดกลุ่มมังงะให้อยู่กึ่งกลางเสมอ */
+    justify-content: center;
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 50px;
 }
 
+/* 4. สไตล์ของแต่ละรายการมังงะ */
 .manga-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* จัดรูปและชื่อให้ตรงกันแนวดิ่ง */
+    align-items: center;
     gap: 15px;
     flex: 0 0 280px;
     max-width: 280px;
-    text-align: center; /* บังคับตัวหนังสือในก้อนนี้กึ่งกลางทั้งหมด */
+    text-align: center;
+    position: relative;
 }
 
 .manga-card {
@@ -87,6 +89,7 @@ body::before {
     border: 2px solid rgba(255, 0, 255, 0.4);
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.15);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative; /* สำคัญสำหรับ Overlay */
 }
 
 .manga-card img {
@@ -97,34 +100,85 @@ body::before {
     transition: 0.4s;
 }
 
-.manga-item:hover .manga-card {
-    transform: scale(1.05);
-    border-color: #00ff00;
-    box-shadow: 0 0 30px #00ff00;
+/* 5. Overlay สำหรับ 3 ลิงก์ (Hover/Click) */
+.manga-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
 }
 
-.manga-item:hover .manga-card img {
-    filter: brightness(1.1);
+/* สั่งให้ Overlay โชว์เมื่อ Hover (คอม) */
+@media (min-width: 1025px) {
+    .manga-item:hover .manga-overlay {
+        opacity: 1;
+    }
+    .manga-item:hover .manga-card {
+        transform: scale(1.05);
+        border-color: #00ff00;
+        box-shadow: 0 0 30px #00ff00;
+    }
+    .manga-item:hover .manga-card img {
+        filter: brightness(1.1);
+    }
 }
 
+/* สั่งให้ Overlay โชว์เมื่อจิ้ม (มือถือผ่าน JS) */
+.manga-item.active .manga-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 85%;
+}
+
+.overlay-content p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #ff00ff;
+    margin-bottom: 5px;
+}
+
+.overlay-content a {
+    padding: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/* 6. ส่วน Title */
 .manga-title {
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     text-shadow: 0 0 10px #ff00ff;
-    width: 100%; /* แผ่ให้เต็มความกว้าง manga-item */
-    word-wrap: break-word; /* ตัดบรรทัดถ้าชื่อยาวไป */
+    width: 100%;
+    word-wrap: break-word;
     margin: 0;
     line-height: 1.4;
+    transition: 0.3s;
 }
 
-.manga-item:hover .manga-title {
+.manga-item:hover .manga-title, .manga-item.active .manga-title {
     text-shadow: 0 0 10px #00ff00;
 }
 
-/* 4. ปุ่มลิงก์ด้านล่าง */
+/* 7. ปุ่มลิงก์รวมด้านล่าง */
 .footer-links {
-    width: 100%; /* บังคับแยกแถวใหม่ */
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -146,7 +200,7 @@ body::before {
     transition: all 0.3s ease;
 }
 
-/* สีปุ่ม */
+/* สีปุ่มนีออน */
 .link-blue { color: #00d2ff; border-color: #00d2ff; box-shadow: 0 0 10px rgba(0,210,255,0.3); }
 .link-blue:hover { background: #00d2ff; color: #000; box-shadow: 0 0 20px #00d2ff; }
 
@@ -156,21 +210,16 @@ body::before {
 .link-light-purple { color: #e0b0ff; border-color: #e0b0ff; box-shadow: 0 0 10px rgba(224, 176, 255, 0.3); }
 .link-light-purple:hover { background: #e0b0ff; color: #000; box-shadow: 0 0 20px #e0b0ff; }
 
-/* --- 5. Responsive สำหรับมือถือ --- */
+/* 8. Responsive (มือถือ) */
 @media (max-width: 768px) {
-    .header {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
-
-    .manga-container {
-        gap: 20px;
-        padding: 0 10px;
-    }
+    .header { font-size: 28px; margin-bottom: 30px; }
+    
+    .manga-container { gap: 20px; padding: 0 10px; }
 
     .manga-item {
-        flex: 0 0 45%; /* แถวละ 2 รูป */
+        flex: 0 0 45%;
         max-width: 45%;
+        text-align: center;
     }
 
     .manga-card {
@@ -179,9 +228,7 @@ body::before {
         aspect-ratio: 2 / 3;
     }
 
-    .manga-title {
-        font-size: 14px;
-    }
+    .manga-title { font-size: 14px; margin-top: 10px; }
 
     .footer-links {
         flex-direction: column;
@@ -189,46 +236,9 @@ body::before {
         gap: 15px;
     }
 
-    .footer-links a {
-        width: 80%;
-        min-width: unset;
-    }
+    .footer-links a { width: 80%; min-width: unset; }
 }
 
-@media (max-width: 768px) {
-    .header {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
-
-    .manga-container {
-        display: flex; /* มั่นใจว่าเป็น flex */
-        justify-content: center; /* จัดกลุ่มให้อยู่กลางจอ */
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .manga-item {
-        flex: 0 0 45%; /* แถวละ 2 รูป */
-        max-width: 45%;
-        display: flex; /* เพิ่มตรงนี้ */
-        flex-direction: column; /* เพิ่มตรงนี้ */
-        align-items: center; /* นี่คือตัวแสบที่ทำให้ไม่กลาง ต้องใส่ตรงนี้! */
-        text-align: center; /* บังคับตัวหนังสือให้อยู่กลางบรรทัด */
-    }
-
-    .manga-card {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 2 / 3;
-    }
-
-    .manga-title {
-        font-size: 14px;
-        width: 100%; /* ให้กว้างเต็ม item */
-        display: block;
-        margin: 10px 0 0 0; /* เว้นระยะจากรูปข้างบนหน่อย */
-    }
-
-    /* ... ส่วน footer-links ข้างล่างปล่อยไว้เหมือนเดิม ... */
+@media (max-width: 480px) {
+    .manga-item { flex: 0 0 90%; max-width: 90%; }
 }
