@@ -1,0 +1,20 @@
+[
+  {
+    "title": "กำเนิดร่างเทวะบรรพกาล",
+    "image": "images/manga01.jpg",
+    "links": {
+      "mynovel": "https://mynovel.co/...",
+      "readrealm": "https://readrealm.co/...",
+      "readtoon": "https://readtoon.com/..."
+    }
+  },
+  {
+    "title": "ชาตินี้ข้าจะเป็นเซียนเต๋า",
+    "image": "images/manga02.png",
+    "links": {
+      "mynovel": "https://mynovel.co/...",
+      "readrealm": "https://readrealm.co/...",
+      "readtoon": "https://readtoon.com/..."
+    }
+  }
+]
