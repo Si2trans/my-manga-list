@@ -7,20 +7,27 @@ body {
     align-items: center;
     color: #fff;
     min-height: 100vh;
-    background-color: #050505; /* พื้นหลังดำสนิท */
-    
-    /* --- สร้างลายตาราง (Grid) --- */
-    background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px; /* ขนาดของช่องตาราง ปรับเลขนี้ถ้าอยากได้ช่องเล็กหรือใหญ่ */
-    /* -------------------------- */
-    
+    background-color: #050505; /* พื้นหลังดำ */
     position: relative;
     overflow-x: hidden;
 }
 
-/* เลเยอร์แสงฟุ้งที่วิ่งตามเมาส์ */
+/* สร้างชั้นตารางที่อยู่นิ่งๆ */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -2;
+}
+
+/* ชั้นแสงเรืองที่จะวิ่งตามเมาส์และโชว์แค่บนเส้นตาราง */
 body::before {
     content: "";
     position: fixed;
@@ -28,36 +35,27 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /* แสงวงกลมที่จะไปสว่างทับลายตาราง */
+    /* แสงไล่สี ฟ้า-ม่วง */
     background: radial-gradient(
-        600px circle at var(--x) var(--y), 
-        rgba(0, 210, 255, 0.15), /* สีฟ้าจางๆ */
-        rgba(160, 32, 240, 0.1), /* สีม่วงจางๆ */
-        transparent 40%
+        400px circle at var(--x) var(--y), 
+        rgba(0, 210, 255, 0.4), 
+        rgba(160, 32, 240, 0.3),
+        transparent 70%
     );
+    /* หัวใจหลัก: สั่งให้แสงแสดงเฉพาะจุดที่เป็นเส้นตาราง */
+    mask-image: 
+        linear-gradient(to right, white 1px, transparent 1px),
+        linear-gradient(to bottom, white 1px, transparent 1px);
+    mask-size: 40px 40px;
+    -webkit-mask-image: 
+        linear-gradient(to right, white 1px, transparent 1px),
+        linear-gradient(to bottom, white 1px, transparent 1px);
+    -webkit-mask-size: 40px 40px;
+    
     z-index: -1;
     pointer-events: none;
+    transition: background 0.1s ease; /* ให้แสงขยับนุ่มๆ */
 }
-
-/* สร้างเลเยอร์แสงฟุ้งแยกออกมาเพื่อไม่ให้ทับเนื้อหา */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* ใช้ค่า --x และ --y จาก JavaScript */
-    background: radial-gradient(
-        600px circle at var(--x) var(--y), 
-        rgba(160, 32, 240, 0.15), 
-        rgba(0, 210, 255, 0.1),
-        transparent 40%
-    );
-    z-index: -1; /* ส่งไปอยู่หลังสุด */
-    pointer-events: none; /* ยอมให้เมาส์คลิกทะลุไปหาปุ่มได้ */
-}
-
 .header {
     color: #fff;
     text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff;
