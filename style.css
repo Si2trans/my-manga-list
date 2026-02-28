@@ -94,3 +94,60 @@ body {
     color: #fff;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
+
+/* ส่วนจัดการลิงก์ด้านล่าง */
+.footer-links {
+    margin-top: 80px; /* เว้นระยะจากรูปภาพลงมา */
+    margin-bottom: 50px;
+    display: flex;
+    gap: 30px; /* ระยะห่างระหว่างปุ่มลิงก์ */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    text-decoration: none; /* เอาเส้นใต้ปุ่มออก */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 30px; /* ทำปุ่มทรงมน */
+    border: 2px solid;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+/* ลิงก์ที่ 1: สีฟ้า */
+.link-blue {
+    color: #00d2ff;
+    border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+.link-blue:hover {
+    background: #00d2ff;
+    color: #000;
+    box-shadow: 0 0 20px #00d2ff;
+}
+
+/* ลิงก์ที่ 2: สีม่วง */
+.link-purple {
+    color: #a020f0;
+    border-color: #a020f0;
+    box-shadow: 0 0 10px rgba(160, 32, 240, 0.3);
+}
+.link-purple:hover {
+    background: #a020f0;
+    color: #fff;
+    box-shadow: 0 0 20px #a020f0;
+}
+
+/* ลิงก์ที่ 3: สีม่วงอ่อน */
+.link-light-purple {
+    color: #e0b0ff;
+    border-color: #e0b0ff;
+    box-shadow: 0 0 10px rgba(224, 176, 255, 0.3);
+}
+.link-light-purple:hover {
+    background: #e0b0ff;
+    color: #000;
+    box-shadow: 0 0 20px #e0b0ff;
+}
