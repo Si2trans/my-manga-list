@@ -1,4 +1,4 @@
-/* 1. แก้ไขส่วนบนสุด */
+/* 1. ตั้งค่าพื้นฐานและแสง Spotlight */
 html, body {
     margin: 0;
     padding: 0;
@@ -94,7 +94,7 @@ body::before {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* 4. การจัดวาง Container */
+/* 4. การจัดวาง Container มังงะ */
 .manga-container {
     display: flex;
     flex-wrap: wrap;
@@ -214,10 +214,22 @@ body::before {
 .link-light-purple:hover { background: #e0b0ff; color: #000; }
 
 /* 8. Footer ลิงก์รวมด้านล่าง */
+.footer-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    padding: 0 20px 80px 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
 .footer-links a {
-    display: inline-flex;    /* เปลี่ยนจาก inline-block เป็น inline-flex */
-    align-items: center;     /* จัดให้ไอคอนกับตัวหนังสืออยู่กลางแนวตั้งเป๊ะๆ */
-    justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-width: 160px;
     padding: 12px 20px;
     font-size: 15px;
@@ -226,12 +238,13 @@ body::before {
     border-radius: 50px;
     border: 2px solid;
     transition: 0.3s;
-    text-align: center;
 }
 
 .footer-links a img {
-    flex-shrink: 0; /* กันไอคอนโดนบีบตอนจอเล็ก */
+    flex-shrink: 0;
+    margin-right: 8px;
 }
+
 /* --- 9. Responsive --- */
 @media screen and (max-width: 1024px) {
     .header { font-size: 28px; margin-bottom: 25px; }
@@ -256,9 +269,14 @@ body::before {
 
     .overlay-content a { padding: 12px 5px; font-size: 14px; }
 
+    /* ปรับแต่ง Footer ในมือถือให้กึ่งกลางแนวตั้ง */
     .footer-links {
         flex-direction: column;
         gap: 15px;
     }
-    .footer-links a { width: 80%; min-width: unset; }
+    .footer-links a { 
+        width: 100%; 
+        max-width: 280px; 
+        min-width: unset; 
+    }
 }
