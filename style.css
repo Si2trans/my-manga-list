@@ -1,49 +1,63 @@
 body {
     font-family: 'Tahoma', sans-serif;
-    background-color: #f0f0f0;
+    /* พื้นหลังสีดำสนิทเพื่อให้สีนีออนเด่น */
+    background-color: #0d0d0d; 
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
     margin: 0;
+    color: #fff;
 }
 
 .header {
-    background-color: #808080;
-    color: white;
-    padding: 15px 60px;
-    font-size: 28px;
+    /* ตัวหนังสือเรืองแสงสีฟ้า */
+    color: #fff;
+    text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff;
+    font-size: 35px;
     font-weight: bold;
-    margin-bottom: 40px;
-    border-radius: 4px;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
 }
 
 .manga-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    max-width: 1000px;
+    gap: 30px;
+    max-width: 1100px;
 }
 
 .manga-card {
-    background-color: #808080;
     width: 180px;
     height: 260px;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    position: relative;
+    /* เส้นขอบนีออนตอนปกติ (สีชมพูม่วง) */
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+    transition: all 0.4s ease-in-out;
     cursor: pointer;
 }
 
+/* เอฟเฟกต์ตอนเอาเมาส์วาง (Hover) */
 .manga-card:hover {
-    transform: scale(1.05); /* ขยายขนาดขึ้นนิดหน่อยเวลาชี้ */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: scale(1.1) rotate(2deg);
+    /* เปลี่ยนสีเรืองแสงเป็นสีเขียวนีออนตอนชี้ */
+    border-color: #00ff00;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px rgba(0, 255, 0, 0.5);
 }
 
 .manga-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* ปรับความสว่างรูปให้น้อยลงนิดนึง พอ Hover แล้วค่อยสว่าง */
+    filter: brightness(0.7);
+    transition: 0.3s;
+}
+
+.manga-card:hover img {
+    filter: brightness(1.1);
 }
