@@ -7,19 +7,36 @@ body {
     align-items: center;
     color: #fff;
     min-height: 100vh;
-    overflow-x: hidden;
+    background-color: #050505; /* พื้นหลังดำสนิท */
     
-    /* พื้นหลังดำ + ลายตารางจางๆ */
-    background-color: #050505;
+    /* --- สร้างลายตาราง (Grid) --- */
     background-image: 
-        linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.9)),
-        linear-gradient(to right, #1a1a1a 1px, transparent 1px),
-        linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
-    background-size: 100% 100%, 40px 40px, 40px 40px;
-
-    /* ตัวแปรแสงที่จะขยับตามเมาส์ */
-    background-attachment: fixed;
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px; /* ขนาดของช่องตาราง ปรับเลขนี้ถ้าอยากได้ช่องเล็กหรือใหญ่ */
+    /* -------------------------- */
+    
     position: relative;
+    overflow-x: hidden;
+}
+
+/* เลเยอร์แสงฟุ้งที่วิ่งตามเมาส์ */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* แสงวงกลมที่จะไปสว่างทับลายตาราง */
+    background: radial-gradient(
+        600px circle at var(--x) var(--y), 
+        rgba(0, 210, 255, 0.15), /* สีฟ้าจางๆ */
+        rgba(160, 32, 240, 0.1), /* สีม่วงจางๆ */
+        transparent 40%
+    );
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* สร้างเลเยอร์แสงฟุ้งแยกออกมาเพื่อไม่ให้ทับเนื้อหา */
