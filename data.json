@@ -3,18 +3,40 @@
     "title": "กำเนิดร่างเทวะบรรพกาล",
     "image": "images/manga01.jpg",
     "links": {
-      "mynovel": "https://mynovel.co/...",
-      "readrealm": "https://readrealm.co/...",
-      "readtoon": "https://readtoon.com/..."
+      "mynovel": "https://mynovel.co/book/6500e510950c49eb3cdcaf32",
+      "readrealm": "https://readrealm.co/comic/WrwEvg7LY8LNY20blNPp",
+      "readtoon": "https://readtoon.com/content/yos5hbxs"
     }
   },
   {
     "title": "ชาตินี้ข้าจะเป็นเซียนเต๋า",
     "image": "images/manga02.png",
     "links": {
-      "mynovel": "https://mynovel.co/...",
-      "readrealm": "https://readrealm.co/...",
-      "readtoon": "https://readtoon.com/..."
+      "readrealm": "https://readrealm.co/comic/rwEvg7LY8K5XV20blNPp",
+      "readtoon": "https://readtoon.com/content/snklyrmf"
     }
-  }
+  },
+  {
+    "title": "ยุคสมัยแห่งภูตผี - Era of the Haunted",
+    "image": "images/manga03.png",
+    "links": {
+      "mynovel": "https://mynovel.co/...",
+      "readrealm": "https://readrealm.co/comic/RdgGN0Q4OMbyV53aL7Wl",
+      "readtoon": "https://readtoon.com/content/pvbi50cl"
+    }
+  },{
+    "title": "โคตรเทพร้านสัตว์อสูร",
+    "image": "images/manga04.jpg",
+    "links": {
+      "mynovel": "https://mynovel.co/book/6327b62a67342369b5d2cbae",
+      "readrealm": "https://readrealm.co/comic/4EQwLk1zYRG8x50y2Wed",
+    }
+  },{
+    "title": "อำนาจเหนือโลก : จุดเริ่มต้นการปลุกพลังของราชันย์อสูร",
+    "image": "images/manga05.jpg",
+    "links": {
+      "readrealm": "https://readrealm.co/comic/3MjZ0qWYgrnMVJLAreG1",
+      "readtoon": "https://readtoon.com/content/kixfdjyl"
+    }
+  },
 ]
