@@ -166,10 +166,13 @@ body::before {
 .footer-links {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    flex-direction: row; /* เรียงแนวนอนในคอม */
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center;    /* จัดกึ่งกลางแนวตั้ง */
+    gap: 25px;
+    margin-top: 50px;
+    padding-bottom: 80px;
+    box-sizing: border-box; /* กันมันบวมออกข้าง */
 }
 
 .footer-links a {
@@ -222,9 +225,18 @@ body::before {
     .overlay-content a { padding: 4px; font-size: 8px; border-width: 1px; }
 
     .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        display: flex;
+        flex-direction: column; /* เปลี่ยนเป็นแนวตั้งในมือถือ */
+        justify-content: center;
+        align-items: center;    /* บังคับปุ่มให้อยู่กลางจอ */
+        gap: 15px;
+        width: 100%;
+        margin-top: 40px;
     }
-    .footer-links a { width: 80%; }
+
+    .footer-links a {
+        width: 80%; /* ให้ปุ่มกว้างเท่าๆ กัน */
+        max-width: 300px; /* ไม่ให้มันยาวเกินไปบนจอมือถือใหญ่ๆ */
+        min-width: unset;
+    }
 }
