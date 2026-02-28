@@ -168,3 +168,51 @@ body::before {
 
 .link-light-purple { color: #e0b0ff; border-color: #e0b0ff; box-shadow: 0 0 10px rgba(224,176,255,0.3); }
 .link-light-purple:hover { background: #e0b0ff; color: #000; box-shadow: 0 0 20px #e0b0ff; }
+
+/* --- ส่วนปรับแต่งสำหรับหน้าจอมือถือ --- */
+@media (max-width: 768px) {
+    .header {
+        font-size: 28px; /* ลดขนาดหัวข้อลงหน่อย */
+        margin-bottom: 30px;
+    }
+
+    .manga-container {
+        gap: 20px; /* ลดระยะห่างระหว่างรูป */
+        padding: 0 10px;
+    }
+
+    .manga-item {
+        flex: 0 0 45%; /* ในมือถือให้โชว์แถวละ 2 รูปพอดีๆ */
+        max-width: 45%;
+    }
+
+    .manga-card {
+        width: 100%; /* ให้รูปขยายเต็มพื้นที่ 45% */
+        height: auto; /* ให้ความสูงปรับตามสัดส่วนรูป */
+        aspect-ratio: 2 / 3; /* รักษาทรงรูปมังงะไว้ */
+    }
+
+    .manga-title {
+        font-size: 14px; /* ลดขนาดตัวหนังสือชื่อเรื่อง */
+    }
+
+    .footer-links {
+        flex-direction: column; /* ในมือถือให้ปุ่มเรียงลงมาแนวตั้ง จะได้กดง่ายๆ */
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .footer-links a {
+        width: 80%; /* ให้ปุ่มกว้างเกือบเต็มจอ จะได้ไม่จิ๋วเกินไป */
+        min-width: unset;
+    }
+}
+
+/* สำหรับมือถือจอเล็กมาก (แถวละ 1 รูป) */
+@media (max-width: 480px) {
+    .manga-item {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+}
