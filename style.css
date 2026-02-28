@@ -201,6 +201,29 @@ body::before {
     transition: 0.3s;
     text-align: center;
 }
+.search-container {
+    margin-bottom: 30px;
+    width: 90%;
+    max-width: 400px;
+}
+
+#manga-search {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00d2ff;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+    transition: 0.3s;
+}
+
+#manga-search:focus {
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
 
 /* สีปุ่มนีออน */
 .link-blue { color: #00d2ff; border-color: #00d2ff; }
