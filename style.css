@@ -58,29 +58,32 @@ body::before {
 }
 
 .manga-container {
-    display: grid;
-    /* ล็อกความกว้างแต่ละช่องไว้ที่ 280px แต่อยากให้เรียงกี่แถวก็ได้ */
-    grid-template-columns: repeat(auto-fit, 280px); 
-    /* หัวใจหลัก: จัดทุกอย่างให้อยู่กึ่งกลางหน้าจอเสมอ */
-    justify-content: center; 
-    /* จัดการไอเทมภายในช่องให้บาลานซ์ */
-    justify-items: center; 
+    display: flex; /* เปลี่ยนเป็น flex เพื่อให้จัดกึ่งกลางแถวสุดท้ายได้ง่ายขึ้น */
+    flex-wrap: wrap; /* ให้รูปตกลงมาบรรทัดใหม่เมื่อเต็มความกว้าง */
+    justify-content: center; /* จัดกึ่งกลางทุกรูปในแต่ละแถว */
     gap: 40px;
-    width: 100%;
-    max-width: 1200px; /* ขยายความกว้างสูงสุดให้รองรับหน้าจอที่กว้างขึ้น */
+    max-width: 1000px; /* คุมความกว้างให้พอดีกับ 3 รูป (280px * 3 + gap) */
     margin: 0 auto;
     padding-bottom: 50px;
 }
 
-/* ปรับให้ footer-links อยู่แถวใหม่และอยู่กลางเสมอ */
+.manga-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 0 0 280px; /* ล็อกความกว้างของแต่ละไอเทมไว้ที่ 280px ไม่ให้ยืดหด */
+}
+
+/* จัดการส่วนลิงก์ด้านล่างให้แยกออกมาเป็นแถวใหม่กึ่งกลางเสมอ */
 .footer-links {
-    grid-column: 1 / -1; /* สั่งให้ลากยาวครอบคลุมทุกคอลัมน์ที่มี */
+    width: 100%; /* บังคับให้กินพื้นที่เต็มบรรทัดเพื่อผลักตัวเองลงไปข้างล่าง */
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 25px;
     margin-top: 50px;
-    width: 100%;
+    padding-bottom: 80px;
 }
 
 .manga-item {
