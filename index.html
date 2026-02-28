@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si2trans</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .header {
+            background-color: #808080;
+            color: white;
+            padding: 10px 40px;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* สร้าง 3 คอลัมน์ */
+            gap: 20px; /* ระยะห่างระหว่างรูป */
+            max-width: 800px;
+        }
+        .manga-card {
+            background-color: #808080; /* สีเทาตามรูปตัวอย่าง */
+            width: 150px;
+            height: 220px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .manga-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ให้รูปพอดีกรอบ */
+        }
+        /* ปรับแต่งให้รองรับมือถือ */
+        @media (max-width: 600px) {
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">แนะนำมังงะ</div>
+
+    <div class="grid-container">
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+1" alt="Manga 1"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+2" alt="Manga 2"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+3" alt="Manga 3"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+4" alt="Manga 4"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+5" alt="Manga 5"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+6" alt="Manga 6"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+7" alt="Manga 7"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+8" alt="Manga 8"></div>
+        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+9" alt="Manga 9"></div>
+    </div>
+
+</body>
+</html>
