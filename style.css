@@ -57,14 +57,30 @@ body::before {
     letter-spacing: 2px;
 }
 
-/* 3. การจัดวาง Grid มังงะ */
 .manga-container {
     display: grid;
-    grid-template-columns: repeat(3, 280px); 
-    justify-content: center;
+    /* ล็อกความกว้างแต่ละช่องไว้ที่ 280px แต่อยากให้เรียงกี่แถวก็ได้ */
+    grid-template-columns: repeat(auto-fit, 280px); 
+    /* หัวใจหลัก: จัดทุกอย่างให้อยู่กึ่งกลางหน้าจอเสมอ */
+    justify-content: center; 
+    /* จัดการไอเทมภายในช่องให้บาลานซ์ */
+    justify-items: center; 
     gap: 40px;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1200px; /* ขยายความกว้างสูงสุดให้รองรับหน้าจอที่กว้างขึ้น */
     margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* ปรับให้ footer-links อยู่แถวใหม่และอยู่กลางเสมอ */
+.footer-links {
+    grid-column: 1 / -1; /* สั่งให้ลากยาวครอบคลุมทุกคอลัมน์ที่มี */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    width: 100%;
 }
 
 .manga-item {
