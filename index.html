@@ -11,57 +11,56 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 40px 20px;
+            margin: 0;
         }
         .header {
             background-color: #808080;
             color: white;
-            padding: 10px 40px;
-            font-size: 32px;
+            padding: 15px 60px;
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* สร้าง 3 คอลัมน์ */
-            gap: 20px; /* ระยะห่างระหว่างรูป */
-            max-width: 800px;
+        /* ปรับส่วนนี้ให้จัดกลางแบบยืดหยุ่น */
+        .manga-container {
+            display: flex;
+            flex-wrap: wrap; /* ถ้าที่เต็มจะขึ้นบรรทัดใหม่เอง */
+            justify-content: center; /* จัดให้อยู่กลางจอ */
+            gap: 25px; /* ระยะห่างระหว่างรูป */
+            max-width: 1000px;
         }
         .manga-card {
-            background-color: #808080; /* สีเทาตามรูปตัวอย่าง */
-            width: 150px;
-            height: 220px;
-            border-radius: 4px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: #808080;
+            width: 180px; /* ขยายขนาดรูปให้ใหญ่ขึ้นนิดนึงเพราะมีน้อยรูป */
+            height: 260px;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        /* เพิ่มลูกเล่นเวลาเอาเมาส์วาง */
+        .manga-card:hover {
+            transform: translateY(-10px);
         }
         .manga-card img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* ให้รูปพอดีกรอบ */
-        }
-        /* ปรับแต่งให้รองรับมือถือ */
-        @media (max-width: 600px) {
-            .grid-container { grid-template-columns: repeat(2, 1fr); }
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">แนะนำมังงะ</div>
+    <div class="header">Si2trans</div>
 
-    <div class="grid-container">
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+1" alt="Manga 1"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+2" alt="Manga 2"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+3" alt="Manga 3"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+4" alt="Manga 4"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+5" alt="Manga 5"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+6" alt="Manga 6"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+7" alt="Manga 7"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+8" alt="Manga 8"></div>
-        <div class="manga-card"><img src="https://via.placeholder.com/150x220?text=Manga+9" alt="Manga 9"></div>
+    <div class="manga-container">
+        <div class="manga-card"><img src="images/manga01.jpg" alt="Manga 1"></div>
+        <div class="manga-card"><img src="images/manga02.jpg" alt="Manga 2"></div>
+        <div class="manga-card"><img src="images/manga03.jpg" alt="Manga 3"></div>
+        <div class="manga-card"><img src="images/manga04.jpg" alt="Manga 4"></div>
+        <div class="manga-card"><img src="images/manga05.jpg" alt="Manga 5"></div>
     </div>
 
 </body>
