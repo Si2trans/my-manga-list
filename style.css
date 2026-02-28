@@ -15,7 +15,7 @@ body {
     text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff;
     font-size: 35px;
     font-weight: bold;
-    margin-bottom: 60px; /* เพิ่มระยะห่างลงมานิดหน่อย */
+    margin-bottom: 60px;
     letter-spacing: 2px;
 }
 
@@ -24,39 +24,73 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* เพิ่มระยะห่างระหว่างรูปเพื่อความโปร่ง */
-    max-width: 1200px; /* ขยายความกว้างสูงสุดเพื่อให้ 3 รูปแรกดูเต็มตา */
+    gap: 40px;
+    max-width: 1200px;
+}
+
+/* เพิ่มกรอบหลักสำหรับแต่ละเรื่อง */
+.manga-item {
+    display: flex;
+    flex-direction: column; /* เรียงรูปและชื่อเรื่องแนวตั้ง */
+    align-items: center; /* จัดให้อยู่กลางกรอบ */
+    gap: 15px; /* ระยะห่างระหว่างรูปกับชื่อเรื่อง */
+    /* กำหนดความกว้างสูงสุดของข้อความไม่ให้เกินรูป */
+    max-width: 280px; 
+    transition: all 0.4s ease-in-out;
+}
+
+/* เอฟเฟกต์ตอนเอาเมาส์วาง (Hover) ที่กรอบหลัก */
+.manga-item:hover {
+    transform: translateY(-10px); /* ยกลอยขึ้น */
 }
 
 .manga-card {
-    /* --- ปรับขนาดรูปให้ใหญ่ขึ้นมาก! --- */
     width: 280px; 
     height: 400px;
-    /* ------------------------------ */
-    border-radius: 16px; /* มุมโค้งมากขึ้นดูทันสมัย */
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    border: 2px solid rgba(255, 0, 255, 0.4); /* เส้นขอบนีออนจางๆ ตอนปกติ */
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.15); /* เรืองแสงเบาๆ */
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เอฟเฟกต์ขยายที่นุ่มนวลและดูเด้ง */
-    cursor: pointer;
+    border: 2px solid rgba(255, 0, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.15);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.manga-card:hover {
-    transform: scale(1.08) translateY(-10px); /* ขยายและยกลอยขึ้น */
-    border-color: #00ff00; /* เปลี่ยนสีเส้นขอบเป็นเขียวนีออนตอนชี้ */
-    box-shadow: 0 0 30px #00ff00, 0 0 60px rgba(0, 255, 0, 0.6); /* เรืองแสงเข้มข้น */
-    z-index: 10; /* ให้รูปที่ Hover อยู่ข้างบนสุด */
+.manga-item:hover .manga-card {
+    border-color: #00ff00;
+    box-shadow: 0 0 30px #00ff00, 0 0 60px rgba(0, 255, 0, 0.6);
 }
 
 .manga-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.6) grayscale(20%); /* มืดลงและอมเทานิดหน่อยเพื่อความอาร์ต */
+    filter: brightness(0.6) grayscale(20%);
     transition: all 0.4s ease;
 }
 
-.manga-card:hover img {
-    filter: brightness(1.2) grayscale(0%); /* สว่างเต็มที่และสีสดเมื่อชี้ */
+.manga-item:hover .manga-card img {
+    filter: brightness(1.2) grayscale(0%);
+}
+
+/* สไตล์สำหรับชื่อเรื่องมังงะ */
+.manga-title {
+    color: #fff;
+    text-align: center; /* จัดตัวหนังสือให้อยู่กลาง */
+    font-size: 18px;
+    font-weight: bold;
+    /* ข้อความนีออนสีชมพู */
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    /* กำหนดให้ขึ้นบรรทัดใหม่เมื่อยาวเกินกรอบภาพ */
+    word-wrap: break-word; /* ตัดคำที่ยาวเกินไป */
+    overflow: hidden; /* ซ่อนข้อความที่เกินกรอบ */
+    text-overflow: ellipsis; /* แสดง ... เมื่อข้อความถูกตัด */
+    /* กำหนดความกว้างสูงสุดของข้อความไม่ให้เกินรูป */
+    max-width: 100%; 
+    transition: all 0.3s ease;
+}
+
+/* เปลี่ยนสีชื่อเรื่องเป็นนีออนสีเขียวเมื่อ Hover */
+.manga-item:hover .manga-title {
+    color: #fff;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
 }
