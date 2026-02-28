@@ -125,6 +125,7 @@ body::before {
     opacity: 0; 
     transition: all 0.3s ease;
     backdrop-filter: blur(6px);
+    z-index: 10; /* เพิ่มให้มั่นใจว่าอยู่เหนือรูป */
 }
 
 /* คอมพิวเตอร์ Hover */
@@ -157,12 +158,30 @@ body::before {
 }
 
 .overlay-content a {
+    display: flex !important; /* จัดไอคอนกับตัวหนังสือ */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
     border-radius: 50px;
     border: 2px solid;
     font-weight: bold;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+} /* <-- ปีกกาตัวนี้แหละที่มึงลืม! */
+
+/* ส่วนของ Footer ลิงก์รวมข้างล่าง (แยกออกมาให้ชัด) */
+.footer-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
 
 /* 6. ส่วน Title */
 .manga-title {
