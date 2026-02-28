@@ -4,58 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Si2trans</title>
-    <style>
-        body {
-            font-family: 'Tahoma', sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            margin: 0;
-        }
-        .header {
-            background-color: #808080;
-            color: white;
-            padding: 15px 60px;
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        /* ปรับส่วนนี้ให้จัดกลางแบบยืดหยุ่น */
-        .manga-container {
-            display: flex;
-            flex-wrap: wrap; /* ถ้าที่เต็มจะขึ้นบรรทัดใหม่เอง */
-            justify-content: center; /* จัดให้อยู่กลางจอ */
-            gap: 25px; /* ระยะห่างระหว่างรูป */
-            max-width: 1000px;
-        }
-        .manga-card {
-            background-color: #808080;
-            width: 180px; /* ขยายขนาดรูปให้ใหญ่ขึ้นนิดนึงเพราะมีน้อยรูป */
-            height: 260px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-        /* เพิ่มลูกเล่นเวลาเอาเมาส์วาง */
-        .manga-card:hover {
-            transform: translateY(-10px);
-        }
-        .manga-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="header">Si2trans</div>
 
-    <div class="manga-container">
+    <div class="manga-container" id="manga-list">
         <div class="manga-card"><img src="images/manga01.jpg" alt="Manga 1"></div>
         <div class="manga-card"><img src="images/manga02.jpg" alt="Manga 2"></div>
         <div class="manga-card"><img src="images/manga03.jpg" alt="Manga 3"></div>
@@ -63,5 +18,6 @@
         <div class="manga-card"><img src="images/manga05.jpg" alt="Manga 5"></div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
