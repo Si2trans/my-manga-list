@@ -24,19 +24,21 @@
       "readrealm": "https://readrealm.co/comic/RdgGN0Q4OMbyV53aL7Wl",
       "readtoon": "https://readtoon.com/content/pvbi50cl"
     }
-  },{
+  },
+  {
     "title": "โคตรเทพร้านสัตว์อสูร",
     "image": "images/manga04.jpg",
     "links": {
       "mynovel": "https://mynovel.co/book/6327b62a67342369b5d2cbae",
-      "readrealm": "https://readrealm.co/comic/4EQwLk1zYRG8x50y2Wed",
+      "readrealm": "https://readrealm.co/comic/4EQwLk1zYRG8x50y2Wed"
     }
-  },{
+  },
+  {
     "title": "อำนาจเหนือโลก : จุดเริ่มต้นการปลุกพลังของราชันย์อสูร",
     "image": "images/manga05.jpg",
     "links": {
       "readrealm": "https://readrealm.co/comic/3MjZ0qWYgrnMVJLAreG1",
       "readtoon": "https://readtoon.com/content/kixfdjyl"
     }
-  },
+  }
 ]
