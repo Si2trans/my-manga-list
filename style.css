@@ -195,9 +195,40 @@ body::before {
     }
 }
 
-@media (max-width: 480px) {
-    .manga-item {
-        flex: 0 0 90%; /* จอเล็กมากโชว์แถวละ 1 รูป */
-        max-width: 90%;
+@media (max-width: 768px) {
+    .header {
+        font-size: 28px;
+        margin-bottom: 30px;
     }
+
+    .manga-container {
+        display: flex; /* มั่นใจว่าเป็น flex */
+        justify-content: center; /* จัดกลุ่มให้อยู่กลางจอ */
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .manga-item {
+        flex: 0 0 45%; /* แถวละ 2 รูป */
+        max-width: 45%;
+        display: flex; /* เพิ่มตรงนี้ */
+        flex-direction: column; /* เพิ่มตรงนี้ */
+        align-items: center; /* นี่คือตัวแสบที่ทำให้ไม่กลาง ต้องใส่ตรงนี้! */
+        text-align: center; /* บังคับตัวหนังสือให้อยู่กลางบรรทัด */
+    }
+
+    .manga-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2 / 3;
+    }
+
+    .manga-title {
+        font-size: 14px;
+        width: 100%; /* ให้กว้างเต็ม item */
+        display: block;
+        margin: 10px 0 0 0; /* เว้นระยะจากรูปข้างบนหน่อย */
+    }
+
+    /* ... ส่วน footer-links ข้างล่างปล่อยไว้เหมือนเดิม ... */
 }
