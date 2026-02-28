@@ -214,17 +214,10 @@ body::before {
 .link-light-purple:hover { background: #e0b0ff; color: #000; }
 
 /* 8. Footer ลิงก์รวมด้านล่าง */
-.footer-links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 60px;
-    padding-bottom: 80px;
-}
-
 .footer-links a {
+    display: inline-flex;    /* เปลี่ยนจาก inline-block เป็น inline-flex */
+    align-items: center;     /* จัดให้ไอคอนกับตัวหนังสืออยู่กลางแนวตั้งเป๊ะๆ */
+    justify-content: center; /* จัดให้อยู่กลางแนวนอน */
     min-width: 160px;
     padding: 12px 20px;
     font-size: 15px;
@@ -236,6 +229,9 @@ body::before {
     text-align: center;
 }
 
+.footer-links a img {
+    flex-shrink: 0; /* กันไอคอนโดนบีบตอนจอเล็ก */
+}
 /* --- 9. Responsive --- */
 @media screen and (max-width: 1024px) {
     .header { font-size: 28px; margin-bottom: 25px; }
