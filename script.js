@@ -18,7 +18,7 @@ async function loadMangaData() {
     }
 }
 
-// 3. ฟังก์ชัน Render (วาดการ์ดมังงะ + ไอคอน 3 เว็บ)
+// 3. ฟังก์ชัน Render (วาดการ์ดมังงะ + ไอคอนส่วนตัว)
 function renderManga(mangaList) {
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
@@ -34,22 +34,21 @@ function renderManga(mangaList) {
     mangaList.forEach(manga => {
         const lnk = manga.links || {};
         
-        // ฟังก์ชันช่วยสร้างปุ่มที่มีไอคอน
-        const createBtn = (url, name, className, domain) => {
+        // ฟังก์ชันช่วยสร้างปุ่ม (ดึงรูปจาก images/ ในเครื่องมึง)
+        const createBtn = (url, name, className, iconFileName) => {
             if (!url) return '';
-            // ใช้ favicon ของแต่ละเว็บมาแปะหน้าชื่อ
-            const iconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=32`;
             return `
                 <a href="${url}" target="_blank" class="${className}" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <img src="${iconUrl}" style="width:16px; height:16px; border-radius:2px;">
+                    <img src="images/${iconFileName}" style="width:18px; height:18px; object-fit:contain;">
                     ${name}
                 </a>`;
         };
 
         let buttonsHTML = '';
-        buttonsHTML += createBtn(lnk.mynovel, 'MYNOVEL', 'link-blue', 'mynovel.co');
-        buttonsHTML += createBtn(lnk.readrealm, 'ReadRealm', 'link-purple', 'readrealm.co');
-        buttonsHTML += createBtn(lnk.readtoon, 'ReadToon', 'link-light-purple', 'readtoon.com');
+        // มึงเปลี่ยนชื่อไฟล์ไอคอน (ตัวสุดท้าย) ให้ตรงกับที่มึงตั้งในโฟลเดอร์ images นะ
+        buttonsHTML += createBtn(lnk.mynovel, 'MYNOVEL', 'link-blue', 'icon-mynovel.png');
+        buttonsHTML += createBtn(lnk.readrealm, 'ReadRealm', 'link-purple', 'icon-readrealm.png');
+        buttonsHTML += createBtn(lnk.readtoon, 'ReadToon', 'link-light-purple', 'icon-readtoon.png');
 
         const mangaHTML = `
             <div class="manga-item">
@@ -86,12 +85,11 @@ function initMobileClick() {
     if (!isTouchDevice) return;
 
     document.querySelectorAll('.manga-item').forEach((item) => {
-        // ใช้ click ปกติแต่ดัก preventDefault ไว้ในจังหวะแรก
         item.onclick = function(e) {
             const isActive = this.classList.contains('active');
             const clickedLink = e.target.closest('a');
 
-            if (isActive && clickedLink) return; // ถ้าเปิดอยู่และกดโดนลิ้ง ให้ไปตามปกติ
+            if (isActive && clickedLink) return;
 
             e.preventDefault();
             e.stopPropagation();
@@ -104,7 +102,6 @@ function initMobileClick() {
     });
 }
 
-// คลิกที่ว่างเพื่อปิด
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.manga-item')) {
         document.querySelectorAll('.manga-item').forEach(i => i.classList.remove('active'));
