@@ -197,47 +197,62 @@ body::before {
 .link-light-purple { color: #e0b0ff; border-color: #e0b0ff; }
 .link-light-purple:hover { background: #e0b0ff; color: #000; }
 
-/* --- 8. Responsive (แก้ให้ 2 แถวและจัดกลางเป๊ะ) --- */
+/* --- 8. Responsive (แก้ปัญหาซูมแล้วพัง + จัด 2 แถวกลางเป๊ะ) --- */
 @media screen and (max-width: 1024px) {
-    .header { font-size: 28px !important; margin-bottom: 25px !important; }
+    .header { 
+        font-size: 28px !important; 
+        margin-bottom: 25px !important; 
+    }
     
     .manga-container { 
-        gap: 15px !important;
-        padding: 0 10px !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
         justify-content: center !important;
+        gap: 20px !important; /* เว้นระยะห่างให้กดง่าย */
+        padding: 0 15px !important; 
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .manga-item {
-        flex: 0 0 calc(50% - 15px) !important; 
-        max-width: calc(50% - 15px) !important;
-        min-width: 140px !important;
+        /* ใช้ % ร่วมกับ calc เพื่อความยืดหยุ่นสูงเวลาซูม */
+        flex: 0 0 calc(50% - 20px) !important; 
+        max-width: calc(50% - 20px) !important;
+        min-width: 140px !important; /* กันมันจิ๋วเกินไปเวลามือถือจอเล็ก */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
     .manga-card {
-        height: auto !important;
-        aspect-ratio: 2 / 3 !important;
+        width: 100% !important;
+        height: auto !important; /* ให้ความสูงหดตามความกว้าง */
+        aspect-ratio: 2 / 3 !important; /* บังคับทรงมังงะไว้ */
     }
 
     .manga-title { 
-        font-size: 13px !important; 
-        margin-top: 8px !important;
+        font-size: 14px !important; 
+        margin-top: 10px !important;
+        width: 100% !important;
         text-align: center !important;
     }
 
-    .overlay-content { gap: 10px !important; width: 85% !important; }
-    .overlay-content a { padding: 10px 2px !important; font-size: 12px !important; }
+    /* ขยายปุ่มในมือถือให้ใหญ่เต็มตา จิ้มไม่พลาด */
+    .overlay-content { gap: 12px !important; width: 90% !important; }
+    .overlay-content a { 
+        padding: 12px 5px !important; 
+        font-size: 14px !important; 
+        display: block !important;
+    }
 
-    /* จัด Footer ให้กึ่งกลางแนวตั้ง */
+    /* บังคับปุ่ม Footer ให้เรียงกลางหน้าจอในมือถือ */
     .footer-links {
-        flex-direction: column !important;
-        gap: 12px !important;
+        flex-direction: column !important; /* เปลี่ยนเป็นแนวตั้ง */
+        gap: 15px !important;
         margin-top: 30px !important;
-        padding-bottom: 60px !important;
     }
     .footer-links a {
-        width: 80% !important;
-        max-width: 280px !important;
+        width: 80% !important; /* ให้ปุ่มกว้างเท่ากันในมือถือ */
         min-width: unset !important;
-        margin: 0 auto !important;
     }
 }
