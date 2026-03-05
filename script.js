@@ -10,7 +10,6 @@ let allManga = [];
 
 // 2. โหลดข้อมูลแบบไวปรู๊ดปร๊าด (มี Cache)
 async function loadMangaData() {
-    // โหลดจาก Cache ก่อนถ้ามี
     const cachedData = localStorage.getItem('manga_data');
     if (cachedData) {
         allManga = JSON.parse(cachedData);
@@ -31,7 +30,6 @@ async function loadMangaData() {
             };
         });
 
-        // บันทึกลง Cache
         localStorage.setItem('manga_data', JSON.stringify(allManga));
         renderManga(allManga);
     } catch (error) {
@@ -39,14 +37,17 @@ async function loadMangaData() {
     }
 }
 
-// 3. Render การ์ด (เอาเลขตอนออกให้หน้าเว็บคลีนๆ)
+// 3. Render การ์ด (เพิ่ม Ribbon เข้าไปให้แล้ว)
 function renderManga(mangaList) {
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
     mangaList.forEach((manga, index) => {
         container.insertAdjacentHTML('beforeend', `
             <div class="manga-item" onclick="openMangaModal(${index})">
-                <div class="manga-card"><img src="${manga.image}" alt="${manga.title}" loading="lazy"></div>
+                <div class="manga-card">
+                    <div class="ribbon">ล่าสุด</div>
+                    <img src="${manga.image}" alt="${manga.title}" loading="lazy">
+                </div>
                 <div class="manga-title">${manga.title}</div>
             </div>
         `);
@@ -61,7 +62,6 @@ function openMangaModal(index) {
     document.getElementById('modal-img').src = manga.image;
     document.getElementById('modal-title').innerText = manga.title;
     
-    // วางเลขตอนคู่กับสถานะ
     document.getElementById('modal-status').innerHTML = 
         `${manga.status || 'ยังไม่ระบุ'} <span style="color:#00d2ff; margin-left:8px;">| ${manga.latest || ''}</span>`;
     
@@ -84,7 +84,7 @@ function createModalBtn(url, name, className, icon) {
             </a>`;
 }
 
-// 5. ปิด Modal & Search (เหมือนเดิม)
+// 5. ปิด Modal & Search
 document.querySelector('.close-modal').onclick = () => closeModal();
 window.onclick = (e) => { if (e.target == document.getElementById('manga-modal')) closeModal(); };
 function closeModal() { document.getElementById('manga-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
