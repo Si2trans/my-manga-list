@@ -8,7 +8,16 @@ body.addEventListener('mousemove', (e) => {
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTuttLSBMLwU8wOzRfijsjaq6ZN6nqxNfydiqEGDSRf6ezdmkNz6dz1hpUxYURoBaOW1LbiMBmhQe8D/pub?output=csv';
 let allManga = []; 
 
-// 2. โหลดข้อมูลแบบไวปรู๊ดปร๊าด (มี Cache)
+// ฟังก์ชัน Debounce สำหรับ Search
+function debounce(func, delay) {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// 2. โหลดข้อมูล
 async function loadMangaData() {
     const cachedData = localStorage.getItem('manga_data');
     if (cachedData) {
@@ -31,19 +40,25 @@ async function loadMangaData() {
         });
 
         localStorage.setItem('manga_data', JSON.stringify(allManga));
+        // ซ่อน Skeleton เมื่อโหลดเสร็จ
+        document.getElementById('skeleton-loader').style.display = 'none';
         renderManga(allManga);
     } catch (error) {
         console.error("ดึงจาก Sheets ไม่ได้ว่ะ:", error);
     }
 }
 
-// 3. Render การ์ด (ดึง status มาใส่ Ribbon)
+// 3. Render การ์ด (เพิ่ม Dynamic Ribbon)
 function renderManga(mangaList) {
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
+    
     mangaList.forEach((manga, index) => {
-        // ดึง status มาโชว์ ถ้า status ว่างจะไม่โชว์ป้าย
-        const ribbonHTML = manga.status ? `<div class="ribbon">${manga.status}</div>` : '';
+        // อัปเกรด Ribbon: เปลี่ยนคลาสตามสถานะ
+        let ribbonClass = 'ribbon';
+        if (manga.status.includes('จบ')) ribbonClass += ' ribbon-end'; // มึงไปเพิ่ม .ribbon-end ใน CSS นะ
+        
+        const ribbonHTML = manga.status ? `<div class="${ribbonClass}">${manga.status}</div>` : '';
         
         container.insertAdjacentHTML('beforeend', `
             <div class="manga-item" onclick="openMangaModal(${index})">
@@ -57,17 +72,15 @@ function renderManga(mangaList) {
     });
 }
 
-// 4. เปิด Modal (วางเลขตอนไว้ข้างๆ สถานะ)
+// 4. Modal & Search (ใส่ Debounce)
 function openMangaModal(index) {
     const manga = allManga[index];
     const modal = document.getElementById('manga-modal');
     
     document.getElementById('modal-img').src = manga.image;
     document.getElementById('modal-title').innerText = manga.title;
-    
     document.getElementById('modal-status').innerHTML = 
         `${manga.status || 'ยังไม่ระบุ'} <span style="color:#00d2ff; margin-left:8px;">| ${manga.latest || ''}</span>`;
-    
     document.getElementById('modal-description').innerText = manga.description || 'ไม่มีเรื่องย่อ...';
 
     const linksContainer = document.getElementById('modal-links');
@@ -87,13 +100,14 @@ function createModalBtn(url, name, className, icon) {
             </a>`;
 }
 
-// 5. ปิด Modal & Search
+function closeModal() { document.getElementById('manga-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
 document.querySelector('.close-modal').onclick = () => closeModal();
 window.onclick = (e) => { if (e.target == document.getElementById('manga-modal')) closeModal(); };
-function closeModal() { document.getElementById('manga-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-document.getElementById('manga-search').addEventListener('input', (e) => {
+
+// อัปเกรด Search ให้มี Debounce (300ms)
+document.getElementById('manga-search').addEventListener('input', debounce((e) => {
     const term = e.target.value.toLowerCase().trim();
     renderManga(allManga.filter(m => m.title.toLowerCase().includes(term)));
-});
+}, 300));
 
 loadMangaData();
