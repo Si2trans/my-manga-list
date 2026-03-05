@@ -46,7 +46,7 @@ body::before {
     gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 10px;
 }
 
-/* 5. สไตล์ของแต่ละรายการมังงะ + Ribbon */
+/* 5. สไตล์ของแต่ละรายการมังงะ + Ribbon ค่อมมุม */
 .manga-item {
     display: flex; flex-direction: column; align-items: center;
     gap: 15px; flex: 0 0 280px; max-width: 280px; text-align: center; cursor: pointer;
@@ -60,13 +60,24 @@ body::before {
     position: relative;
 }
 
-/* --- ส่วนเพิ่ม: Ribbon --- */
+/* --- ส่วนอัปเกรด: Ribbon ค่อมมุมแบบมีเงา --- */
 .ribbon {
-    position: absolute; top: 12px; left: -30px; width: 100px;
-    background-color: #ff007f; color: #fff; text-align: center;
-    font-size: 11px; font-weight: bold; transform: rotate(-45deg);
-    z-index: 5; box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    position: absolute;
+    top: 15px;
+    left: -35px;
+    width: 140px;
+    padding: 6px 0;
+    background: linear-gradient(135deg, #ff007f, #cc0066);
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(-45deg);
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .manga-card img {
