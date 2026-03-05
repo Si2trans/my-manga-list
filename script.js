@@ -37,15 +37,18 @@ async function loadMangaData() {
     }
 }
 
-// 3. Render การ์ด (เพิ่ม Ribbon เข้าไปให้แล้ว)
+// 3. Render การ์ด (ดึง status มาใส่ Ribbon)
 function renderManga(mangaList) {
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
     mangaList.forEach((manga, index) => {
+        // ดึง status มาโชว์ ถ้า status ว่างจะไม่โชว์ป้าย
+        const ribbonHTML = manga.status ? `<div class="ribbon">${manga.status}</div>` : '';
+        
         container.insertAdjacentHTML('beforeend', `
             <div class="manga-item" onclick="openMangaModal(${index})">
                 <div class="manga-card">
-                    <div class="ribbon">ล่าสุด</div>
+                    ${ribbonHTML}
                     <img src="${manga.image}" alt="${manga.title}" loading="lazy">
                 </div>
                 <div class="manga-title">${manga.title}</div>
