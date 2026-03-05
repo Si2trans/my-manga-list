@@ -6,48 +6,54 @@ body.addEventListener('mousemove', (e) => {
 });
 
 const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTuttLSBMLwU8wOzRfijsjaq6ZN6nqxNfydiqEGDSRf6ezdmkNz6dz1hpUxYURoBaOW1LbiMBmhQe8D/pub?output=csv';
-
 let allManga = []; 
 
-// 2. โหลดข้อมูล (ดึง latest มาเก็บไว้ แต่ไม่ต้องเอาไปโชว์ใน renderManga)
+// 2. โหลดข้อมูลแบบไวปรู๊ดปร๊าด (มี Cache)
 async function loadMangaData() {
+    // โหลดจาก Cache ก่อนถ้ามี
+    const cachedData = localStorage.getItem('manga_data');
+    if (cachedData) {
+        allManga = JSON.parse(cachedData);
+        renderManga(allManga);
+    }
+
     try {
         const response = await fetch(csvUrl);
         const data = await response.text();
         const lines = data.split('\n');
+        
         allManga = lines.slice(1).filter(line => line.trim() !== "").map(line => {
             const v = line.split(',');
             return {
-                title: v[0],
-                image: v[1],
-                status: v[2],
-                description: v[3],
-                latest: v[4], // เก็บไว้ใช้ใน Modal
+                title: v[0], image: v[1], status: v[2], description: v[3],
+                latest: v[4],
                 links: { mynovel: v[5], readrealm: v[6], readtoon: v[7] }
             };
         });
+
+        // บันทึกลง Cache
+        localStorage.setItem('manga_data', JSON.stringify(allManga));
         renderManga(allManga);
-    } catch (error) { console.error("โหลดข้อมูลไม่ได้มึง:", error); }
+    } catch (error) {
+        console.error("ดึงจาก Sheets ไม่ได้ว่ะ:", error);
+    }
 }
 
-// 3. Render การ์ด (แบบคลีนๆ)
+// 3. Render การ์ด (เอาเลขตอนออกให้หน้าเว็บคลีนๆ)
 function renderManga(mangaList) {
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
     mangaList.forEach((manga, index) => {
-        const mangaHTML = `
+        container.insertAdjacentHTML('beforeend', `
             <div class="manga-item" onclick="openMangaModal(${index})">
-                <div class="manga-card">
-                    <img src="${manga.image}" alt="${manga.title}" loading="lazy">
-                </div>
+                <div class="manga-card"><img src="${manga.image}" alt="${manga.title}" loading="lazy"></div>
                 <div class="manga-title">${manga.title}</div>
             </div>
-        `;
-        container.insertAdjacentHTML('beforeend', mangaHTML);
+        `);
     });
 }
 
-// 4. ระบบเปิด Modal (วาง latest คู่กับ status)
+// 4. เปิด Modal (วางเลขตอนไว้ข้างๆ สถานะ)
 function openMangaModal(index) {
     const manga = allManga[index];
     const modal = document.getElementById('manga-modal');
@@ -55,21 +61,18 @@ function openMangaModal(index) {
     document.getElementById('modal-img').src = manga.image;
     document.getElementById('modal-title').innerText = manga.title;
     
-    // ตรงนี้แหละ: วาง status คู่กับ latest
-    document.getElementById('modal-status').innerHTML = `
-        ${manga.status || 'ยังไม่ระบุ'} 
-        <span style="margin-left:10px; color:#00d2ff; font-weight:bold;">| ${manga.latest}</span>
-    `;
+    // วางเลขตอนคู่กับสถานะ
+    document.getElementById('modal-status').innerHTML = 
+        `${manga.status || 'ยังไม่ระบุ'} <span style="color:#00d2ff; margin-left:8px;">| ${manga.latest || ''}</span>`;
     
     document.getElementById('modal-description').innerText = manga.description || 'ไม่มีเรื่องย่อ...';
 
     const linksContainer = document.getElementById('modal-links');
-    linksContainer.innerHTML = ''; // ล้างของเก่า
-    
+    linksContainer.innerHTML = '';
     const lnk = manga.links || {};
-    if (lnk.mynovel && lnk.mynovel.trim() !== "") linksContainer.innerHTML += createModalBtn(lnk.mynovel, 'MYNOVEL', 'link-blue', 'icon-mynovel.png');
-    if (lnk.readrealm && lnk.readrealm.trim() !== "") linksContainer.innerHTML += createModalBtn(lnk.readrealm, 'ReadRealm', 'link-purple', 'icon-readrealm.png');
-    if (lnk.readtoon && lnk.readtoon.trim() !== "") linksContainer.innerHTML += createModalBtn(lnk.readtoon, 'ReadToon', 'link-light-purple', 'icon-readtoon.png');
+    if (lnk.mynovel?.trim()) linksContainer.innerHTML += createModalBtn(lnk.mynovel, 'MYNOVEL', 'link-blue', 'icon-mynovel.png');
+    if (lnk.readrealm?.trim()) linksContainer.innerHTML += createModalBtn(lnk.readrealm, 'ReadRealm', 'link-purple', 'icon-readrealm.png');
+    if (lnk.readtoon?.trim()) linksContainer.innerHTML += createModalBtn(lnk.readtoon, 'ReadToon', 'link-light-purple', 'icon-readtoon.png');
 
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -77,12 +80,11 @@ function openMangaModal(index) {
 
 function createModalBtn(url, name, className, icon) {
     return `<a href="${url.trim()}" target="_blank" class="${className}">
-                <img src="images/${icon}" style="width:18px; height:18px; object-fit:contain;">
-                ${name}
+                <img src="images/${icon}" style="width:18px; height:18px; object-fit:contain;"> ${name}
             </a>`;
 }
 
-// ... (closeModal, search, และ start ทำงานเหมือนเดิม)
+// 5. ปิด Modal & Search (เหมือนเดิม)
 document.querySelector('.close-modal').onclick = () => closeModal();
 window.onclick = (e) => { if (e.target == document.getElementById('manga-modal')) closeModal(); };
 function closeModal() { document.getElementById('manga-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
@@ -90,4 +92,5 @@ document.getElementById('manga-search').addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase().trim();
     renderManga(allManga.filter(m => m.title.toLowerCase().includes(term)));
 });
+
 loadMangaData();
