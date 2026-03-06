@@ -1,55 +1,46 @@
-/* 1. ตั้งค่าพื้นฐานและแสง Spotlight */
+/* 1. รีเซ็ตและพื้นฐาน */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap');
-html, body { margin: 0; padding: 0; width: 100%; min-height: 100vh; overflow-x: hidden; position: relative; box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; }
+* { box-sizing: border-box; }
+body { 
+    margin: 0; padding: 20px 0; background: #050505; color: #fff; 
+    font-family: 'Prompt', sans-serif; display: flex; flex-direction: column; align-items: center; 
+}
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #050505; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+/* 2. หัวข้อและ Search */
+.header { color: #fff; text-shadow: 0 0 10px #00d2ff; font-size: 28px; font-weight: bold; margin-bottom: 30px; text-align: center; }
+.search-container { margin-bottom: 25px; width: 90%; max-width: 400px; }
+#manga-search { 
+    width: 100%; padding: 12px 20px; background: rgba(255, 255, 255, 0.05); 
+    border: 2px solid #00d2ff; border-radius: 50px; color: white; outline: none; 
+}
 
-body { font-family: 'Prompt', sans-serif; padding: 40px 0; color: #fff; background-color: #050505; display: flex; flex-direction: column; align-items: center; }
+/* 3. การจัดวางการ์ด (รองรับมือถือ) */
+.manga-container { 
+    display: flex; flex-wrap: wrap; justify-content: center; 
+    gap: 15px; width: 100%; max-width: 1200px; padding: 0 15px; 
+}
 
-/* 2. หัวข้อ */
-.header { color: #fff; text-shadow: 0 0 10px #00d2ff; font-size: 35px; font-weight: bold; margin-bottom: 40px; letter-spacing: 2px; text-align: center; }
-
-/* 3. Search Bar */
-.search-container { margin-bottom: 30px; width: 90%; max-width: 400px; }
-#manga-search { width: 100%; padding: 12px 20px; background: rgba(255, 255, 255, 0.05); border: 2px solid #00d2ff; border-radius: 50px; color: white; outline: none; }
-
-/* 4. Container & Cards (แบบนิ่ง) */
-.manga-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; padding: 0 10px; }
-.manga-item { display: flex; flex-direction: column; align-items: center; width: 280px; text-align: center; cursor: pointer; margin-bottom: 20px; }
+/* ขนาดการ์ดในคอม */
+.manga-item { width: 220px; text-align: center; cursor: pointer; margin-bottom: 20px; }
 .manga-card { 
-    width: 280px; height: 400px; border-radius: 12px; overflow: hidden; 
+    width: 100%; aspect-ratio: 2 / 3; border-radius: 12px; overflow: hidden; 
     border: 1px solid rgba(255, 255, 255, 0.1); position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); transition: 0.3s;
 }
-.manga-card img { width: 100%; height: 100%; object-fit: cover; }
-.manga-item:hover .manga-card { transform: scale(1.03); border-color: #00d2ff; }
+.manga-card img { width: 100%; height: 100%; object-fit: cover; } /* "รูปเต็ม" แบบไม่เสียสัดส่วน */
+.manga-item:hover .manga-card { transform: scale(1.05); border-color: #00d2ff; }
 
-/* เพิ่มใหม่: ชื่อเรื่องและการปรับแต่งเอฟเฟกต์ */
 .manga-title {
-    width: 100%; max-width: 280px;
-    margin-top: 15px; /* ขยับลงมาตามที่พี่สั่ง */
-    font-size: 15px; font-weight: 500;
-    text-align: center; color: #fff;
-    text-shadow: 0 0 5px rgba(0, 210, 255, 0.5); /* เอฟเฟกต์แสง */
-    transition: 0.3s;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    padding: 0 10px;
+    margin-top: 12px; font-size: 14px; color: #fff;
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.5); transition: 0.3s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 5px;
 }
-.manga-item:hover .manga-title {
-    color: #00d2ff;
-    text-shadow: 0 0 10px #00d2ff;
-    transform: translateY(2px);
-}
+.manga-item:hover .manga-title { color: #00d2ff; transform: translateY(2px); }
 
-/* 5. Ribbon */
+/* 4. Ribbon (ขาวล้วน พื้นหลังตามสถานะ) */
 .ribbon {
-    position: absolute; top: 15px; left: -30px; width: 130px; padding: 5px 0;
-    color: #fff !important;
-    text-align: center; font-size: 11px; font-weight: bold;
+    position: absolute; top: 12px; left: -35px; width: 130px; padding: 4px 0;
+    color: #fff !important; text-align: center; font-size: 10px; font-weight: bold;
     text-transform: uppercase; transform: rotate(-45deg); z-index: 10;
     -webkit-text-stroke: 0.5px #000; text-shadow: 1px 1px 2px #000;
 }
@@ -58,41 +49,43 @@ body { font-family: 'Prompt', sans-serif; padding: 40px 0; color: #fff; backgrou
 .ribbon-new { background: linear-gradient(135deg, #6a11cb, #2575fc) !important; }
 .ribbon-hiatus { background: linear-gradient(135deg, #ffb800, #ff8c00) !important; }
 
-/* 6. Modal */
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); align-items: center; justify-content: center; padding: 10px; }
-.modal-content { background: #111; border: 1px solid #333; width: 100%; max-width: 800px; max-height: 90vh; border-radius: 20px; position: relative; animation: modalFadeIn 0.3s ease-out; box-shadow: 0 0 40px rgba(0, 210, 255, 0.2); display: flex; flex-direction: column; overflow: hidden; }
-@keyframes modalFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-.close-modal { position: absolute; right: 15px; top: 10px; color: #fff; font-size: 35px; font-weight: bold; cursor: pointer; z-index: 100; transition: 0.3s; background: rgba(0,0,0,0.5); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
-.close-modal:hover { color: #ff007f; }
-.modal-body { display: flex; gap: 30px; padding: 30px; overflow-y: auto; flex: 1; }
-.modal-image-container img { width: 250px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-.modal-info h2 { margin-top: 0; margin-bottom: 10px; font-size: 28px; color: #00d2ff; }
-.status-badge { display: inline-block; padding: 6px 15px; background: rgba(0, 255, 127, 0.1); color: #00ff7f; border: 1px solid #00ff7f; border-radius: 5px; font-size: 13px; margin-bottom: 20px; align-self: flex-start; }
-.description-container p { font-size: 15px; line-height: 1.7; color: #ccc; white-space: pre-line; }
-.modal-buttons { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 12px; padding-bottom: 10px; }
-.modal-buttons a { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.3s; border: 2px solid; color: #fff; }
-.link-blue { color: #00d2ff; border-color: #00d2ff; } .link-blue:hover { background: #00d2ff; color: #000; }
-.link-purple { color: #a020f0; border-color: #a020f0; } .link-purple:hover { background: #a020f0; color: #fff; }
-.link-light-purple { color: #e0b0ff; border-color: #e0b0ff; } .link-light-purple:hover { background: #e0b0ff; color: #000; }
-
-/* 7. Footer */
-.footer-links { width: 100%; display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 50px; padding: 0 20px 80px 20px; box-sizing: border-box; flex-wrap: wrap; }
-.footer-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; padding: 12px 20px; font-size: 15px; font-weight: bold; text-decoration: none; border-radius: 50px; border: 2px solid; transition: 0.3s; }
-
-
-/* ส่วนปรับแต่งให้แสดงผลสวยบนมือถือ */
-@media screen and (max-width: 768px) {
-    /* ปรับขนาดการ์ดให้เล็กลงให้พอดีกับจอแคบๆ */
-    .manga-item { width: 45% !important; }
-    .manga-card { width: 100% !important; height: 200px !important; }
-    
-    /* ปรับขนาดตัวอักษรและระยะห่าง */
-    .header { font-size: 24px !important; margin-bottom: 20px !important; }
-    .search-container { width: 95% !important; }
-    
-    /* ปรับชื่อเรื่องให้เล็กลงบนมือถือ */
-    .manga-title { font-size: 13px !important; max-width: 100% !important; }
-
-    /* ปรับ Ribbon ให้เล็กลง */
-    .ribbon { width: 100px !important; font-size: 9px !important; left: -25px !important; }
+/* 5. ป็อปอัพ (Modal) แก้ให้ไม่พัง */
+.modal { 
+    display: none; position: fixed; z-index: 9999; left: 0; top: 0; 
+    width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); 
+    backdrop-filter: blur(10px); align-items: center; justify-content: center; padding: 15px; 
 }
+.modal-content { 
+    background: #111; border: 1px solid #333; width: 100%; max-width: 850px; 
+    max-height: 90vh; border-radius: 20px; position: relative; overflow-y: auto;
+    animation: modalFadeIn 0.3s ease-out; box-shadow: 0 0 50px rgba(0, 210, 255, 0.2); 
+}
+@keyframes modalFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.modal-body { display: flex; gap: 30px; padding: 30px; }
+.modal-image-container img { width: 250px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+.modal-info { flex: 1; display: flex; flex-direction: column; }
+.modal-info h2 { margin: 0 0 10px 0; font-size: 26px; color: #00d2ff; }
+.description-container { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; margin: 15px 0; max-height: 200px; overflow-y: auto; }
+.description-container p { font-size: 14px; line-height: 1.6; color: #ccc; margin: 0; }
+
+.modal-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+.modal-buttons a { 
+    flex: 1; min-width: 140px; text-align: center; padding: 10px; 
+    border-radius: 50px; border: 2px solid; color: #fff; text-decoration: none; font-weight: bold; font-size: 13px; transition: 0.3s;
+}
+.link-blue { color: #00d2ff !important; border-color: #00d2ff !important; }
+.link-purple { color: #a020f0 !important; border-color: #a020f0 !important; }
+
+/* 6. ปรับแต่งสำหรับมือถือ (Responsive) */
+@media screen and (max-width: 768px) {
+    .manga-item { width: calc(50% - 10px); } /* เรียง 2 ตัวต่อแถว */
+    .modal-body { flex-direction: column; align-items: center; padding: 20px; }
+    .modal-image-container img { width: 180px; }
+    .modal-info h2 { font-size: 20px; text-align: center; }
+    .modal-buttons a { width: 100%; }
+    .close-modal { top: 10px; right: 10px; font-size: 30px; }
+}
+
+.close-modal { position: absolute; right: 20px; top: 15px; color: #fff; font-size: 40px; cursor: pointer; z-index: 100; transition: 0.3s; }
+.close-modal:hover { color: #ff007f; }
