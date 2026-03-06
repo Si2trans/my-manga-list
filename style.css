@@ -78,3 +78,21 @@ body { font-family: 'Prompt', sans-serif; padding: 40px 0; color: #fff; backgrou
 /* 7. Footer */
 .footer-links { width: 100%; display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 50px; padding: 0 20px 80px 20px; box-sizing: border-box; flex-wrap: wrap; }
 .footer-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; padding: 12px 20px; font-size: 15px; font-weight: bold; text-decoration: none; border-radius: 50px; border: 2px solid; transition: 0.3s; }
+
+
+/* ส่วนปรับแต่งให้แสดงผลสวยบนมือถือ */
+@media screen and (max-width: 768px) {
+    /* ปรับขนาดการ์ดให้เล็กลงให้พอดีกับจอแคบๆ */
+    .manga-item { width: 45% !important; }
+    .manga-card { width: 100% !important; height: 200px !important; }
+    
+    /* ปรับขนาดตัวอักษรและระยะห่าง */
+    .header { font-size: 24px !important; margin-bottom: 20px !important; }
+    .search-container { width: 95% !important; }
+    
+    /* ปรับชื่อเรื่องให้เล็กลงบนมือถือ */
+    .manga-title { font-size: 13px !important; max-width: 100% !important; }
+
+    /* ปรับ Ribbon ให้เล็กลง */
+    .ribbon { width: 100px !important; font-size: 9px !important; left: -25px !important; }
+}
