@@ -48,20 +48,25 @@ async function loadMangaData() {
     }
 }
 
-// 3. Render การ์ด (เพิ่ม Dynamic Ribbon)
+// 3. Render การ์ด (อัปเกรดให้รองรับ Ribbon หลายสี)
 function renderManga(mangaList) {
     const skeleton = document.getElementById('skeleton-loader');
-    if (skeleton) skeleton.style.display = 'none'; // ซ่อน Skeleton
+    if (skeleton) skeleton.style.display = 'none'; // ซ่อน Skeleton เมื่อเริ่มแสดงผลข้อมูล
     
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
     
     mangaList.forEach((manga, index) => {
-        // เลือก Class ตามคำที่อยู่ใน Status (ใส่กี่สีก็ได้ตามใจมึง)
+        // --- ส่วนที่แก้ไข: เพิ่มเงื่อนไขสี Ribbon ---
         let ribbonClass = 'ribbon';
-        if (manga.status.includes('จบ')) ribbonClass += ' ribbon-end';
-        else if (manga.status.includes('ดอง')) ribbonClass += ' ribbon-hiatus';
-        else if (manga.status.includes('ใหม่')) ribbonClass += ' ribbon-new';
+        if (manga.status.includes('จบ')) {
+            ribbonClass += ' ribbon-end';
+        } else if (manga.status.includes('ดอง')) {
+            ribbonClass += ' ribbon-hiatus';
+        } else if (manga.status.includes('ใหม่')) {
+            ribbonClass += ' ribbon-new';
+        }
+        // ----------------------------------------
         
         const ribbonHTML = manga.status ? `<div class="${ribbonClass}">${manga.status}</div>` : '';
         
