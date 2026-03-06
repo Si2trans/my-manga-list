@@ -134,3 +134,19 @@ body::before {
     .modal-image-container img { width: 160px; }
     .footer-links { flex-direction: column; gap: 15px; }
 }
+
+/* --- อัปเดตสี Ribbon ตามสถานะ --- */
+.ribbon-end { 
+    background: linear-gradient(135deg, #00d2ff, #00ff7f) !important; 
+    box-shadow: 0 0 10px rgba(0, 255, 127, 0.4);
+}
+
+.ribbon-hiatus { 
+    background: linear-gradient(135deg, #ffb800, #ff8c00) !important; 
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
+}
+
+.ribbon-new { 
+    background: linear-gradient(135deg, #6a11cb, #2575fc) !important; 
+    box-shadow: 0 0 10px rgba(37, 117, 252, 0.4);
+}
