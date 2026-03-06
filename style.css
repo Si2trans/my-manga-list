@@ -50,14 +50,49 @@ body {
 /* ==========================================================================
    3. Manga Grid & Cards
    ========================================================================== */
-.manga-container { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 10px; 
-    width: 100%; 
-    max-width: 1200px; 
-    padding: 0 10px; 
+/* รวมกลุ่มเพื่อความกระชับ */
+.manga-container, .skeleton-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+}
+
+.skeleton-card {
+    width: calc(50% - 10px);
+    max-width: 180px;
+    aspect-ratio: 2 / 3;
+    background: #1a1a1a;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* สร้างเอฟเฟกต์แสงวิ่งผ่าน */
+.skeleton-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+    animation: skeleton-pulse 1.5s infinite;
+}
+
+@keyframes skeleton-pulse {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ปรับให้รองรับ Desktop */
+@media screen and (min-width: 768px) {
+    .skeleton-card {
+        width: 160px; /* ปรับขนาดให้เหมาะกับจอใหญ่ */
+    }
 }
 
 .manga-item { 
@@ -284,10 +319,26 @@ body {
         flex-direction: column; 
         padding: 20px; 
         align-items: center; 
+        /* แก้ไข: ใช้ max-height แทน และทำให้มัน Scroll ภายในตัวมันเอง */
+        max-height: 85vh; 
         overflow-y: auto; 
+        /* เพิ่ม: ให้มันรองรับการสัมผัสแบบลื่นๆ บนมือถือ */
+        -webkit-overflow-scrolling: touch; 
     }
-    .modal-image-container img { width: 200px; height: 280px; }
-    .modal-info { text-align: center; }
+
+    .modal-image-container img { 
+        width: 160px; /* ลดขนาดลงอีกนิดเพื่อให้เห็นเนื้อหาด้านล่างมากขึ้น */
+        height: 220px; 
+    }
+
+    .modal-info { 
+        text-align: center; 
+        width: 100%; /* บังคับให้เต็มความกว้าง */
+    }
+
     .status-badge { align-self: center; }
     .modal-buttons { justify-content: center; }
+    
+    /* เพิ่ม: เว้นระยะห่างด้านล่างสำหรับมือถือ */
+    .description-container { margin-bottom: 30px; }
 }
