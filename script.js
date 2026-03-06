@@ -48,25 +48,28 @@ async function loadMangaData() {
     }
 }
 
-// 3. Render การ์ด (อัปเกรดให้รองรับ Ribbon หลายสี)
+// 3. Render การ์ด (อัปเดตเงื่อนไขสี)
 function renderManga(mangaList) {
     const skeleton = document.getElementById('skeleton-loader');
-    if (skeleton) skeleton.style.display = 'none'; // ซ่อน Skeleton เมื่อเริ่มแสดงผลข้อมูล
+    if (skeleton) skeleton.style.display = 'none';
     
     const container = document.getElementById('manga-list');
     container.innerHTML = ''; 
     
     mangaList.forEach((manga, index) => {
-        // --- ส่วนที่แก้ไข: เพิ่มเงื่อนไขสี Ribbon ---
+        // --- จุดที่เพิ่มเงื่อนไขสี ---
         let ribbonClass = 'ribbon';
+        
         if (manga.status.includes('จบ')) {
-            ribbonClass += ' ribbon-end';
+            ribbonClass += ' ribbon-end';      // สีแดง (ต้องมี .ribbon-end ใน CSS)
+        } else if (manga.status.includes('อัปเดต')) {
+            ribbonClass += ' ribbon-updating'; // สีเขียว (ต้องมี .ribbon-updating ใน CSS)
         } else if (manga.status.includes('ดอง')) {
             ribbonClass += ' ribbon-hiatus';
         } else if (manga.status.includes('ใหม่')) {
             ribbonClass += ' ribbon-new';
         }
-        // ----------------------------------------
+        // -------------------------
         
         const ribbonHTML = manga.status ? `<div class="${ribbonClass}">${manga.status}</div>` : '';
         
@@ -81,7 +84,6 @@ function renderManga(mangaList) {
         `);
     });
 }
-
 // 4. Modal
 function openMangaModal(index) {
     const manga = allManga[index];
