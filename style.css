@@ -135,18 +135,26 @@ body::before {
     .footer-links { flex-direction: column; gap: 15px; }
 }
 
-/* --- อัปเดตสี Ribbon ตามสถานะ --- */
+/* เพิ่ม Stroke สีดำให้ข้อความใน Ribbon ทุกตัว */
+.ribbon {
+    position: absolute; top: 15px; left: -35px; width: 140px;
+    padding: 6px 0; color: #fff; text-align: center; font-size: 11px; font-weight: bold;
+    text-transform: uppercase; transform: rotate(-45deg);
+    z-index: 10; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none; border: 1px solid rgba(255, 255, 255, 0.1);
+    /* ตัวนี้คือ Stroke สีดำ */
+    -webkit-text-stroke: 0.5px #000;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* สีเขียว: อัปเดต */
+.ribbon-updating { 
+    background: linear-gradient(135deg, #28a745, #155724) !important; 
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
+}
+
+/* สีแดง: จบแล้ว */
 .ribbon-end { 
-    background: linear-gradient(135deg, #00d2ff, #00ff7f) !important; 
-    box-shadow: 0 0 10px rgba(0, 255, 127, 0.4);
-}
-
-.ribbon-hiatus { 
-    background: linear-gradient(135deg, #ffb800, #ff8c00) !important; 
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
-}
-
-.ribbon-new { 
-    background: linear-gradient(135deg, #6a11cb, #2575fc) !important; 
-    box-shadow: 0 0 10px rgba(37, 117, 252, 0.4);
+    background: linear-gradient(135deg, #dc3545, #721c24) !important; 
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
 }
