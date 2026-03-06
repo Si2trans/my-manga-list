@@ -1,105 +1,273 @@
-/* 1. ตั้งค่าพื้นฐาน */
+/* ==========================================================================
+   1. Imports & Global Reset
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap');
-* { box-sizing: border-box; }
+
+* { 
+    box-sizing: border-box; 
+}
+
 body { 
-    margin: 0; padding: 20px 0; background: #050505; color: #fff; 
-    font-family: 'Prompt', sans-serif; display: flex; flex-direction: column; align-items: center; 
+    margin: 0; 
+    padding: 20px 0; 
+    background: #050505; 
+    color: #fff; 
+    font-family: 'Prompt', sans-serif; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
     min-height: 100vh;
 }
 
-/* 2. หัวข้อและ Search */
-.header { color: #fff; text-shadow: 0 0 10px #00d2ff; font-size: 28px; font-weight: bold; margin-bottom: 30px; text-align: center; }
-.search-container { margin-bottom: 25px; width: 90%; max-width: 400px; }
-#manga-search { 
-    width: 100%; padding: 12px 20px; background: rgba(255, 255, 255, 0.05); 
-    border: 2px solid #00d2ff; border-radius: 50px; color: white; outline: none; 
+/* ==========================================================================
+   2. Header & Search
+   ========================================================================== */
+.header { 
+    color: #fff; 
+    text-shadow: 0 0 10px #00d2ff; 
+    font-size: 28px; 
+    font-weight: bold; 
+    margin-bottom: 30px; 
+    text-align: center; 
 }
 
-/* 3. การจัดวางการ์ด */
-.manga-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; width: 100%; max-width: 1200px; padding: 0 15px; }
-.manga-item { width: 220px; text-align: center; cursor: pointer; margin-bottom: 25px; }
-.manga-card { width: 100%; aspect-ratio: 2 / 3; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); transition: 0.3s; }
-.manga-card img { width: 100%; height: 100%; object-fit: cover; }
-.manga-item:hover .manga-card { transform: scale(1.05); border-color: #00d2ff; }
-.manga-title { margin-top: 15px; font-size: 15px; color: #fff; text-shadow: 0 0 5px rgba(0, 210, 255, 0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 10px; }
+.search-container { 
+    margin-bottom: 25px; 
+    width: 90%; 
+    max-width: 400px; 
+}
 
-/* 4. Ribbon */
-.ribbon { position: absolute; top: 12px; left: -35px; width: 130px; padding: 4px 0; color: #fff !important; text-align: center; font-size: 10px; font-weight: bold; text-transform: uppercase; transform: rotate(-45deg); z-index: 10; -webkit-text-stroke: 0.5px #000; text-shadow: 1px 1px 2px #000; }
-.ribbon-end { background: linear-gradient(135deg, #dc3545, #721c24) !important; }
+#manga-search { 
+    width: 100%; 
+    padding: 12px 20px; 
+    background: rgba(255, 255, 255, 0.05); 
+    border: 2px solid #00d2ff; 
+    border-radius: 50px; 
+    color: white; 
+    outline: none; 
+}
+
+/* ==========================================================================
+   3. Manga Grid & Cards
+   ========================================================================== */
+.manga-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
+    width: 100%; 
+    max-width: 1200px; 
+    padding: 0 10px; 
+}
+
+.manga-item { 
+    width: calc(50% - 10px); 
+    max-width: 180px; 
+    text-align: center; 
+    cursor: pointer; 
+    margin-bottom: 20px; 
+}
+
+.manga-card { 
+    width: 100%; 
+    aspect-ratio: 2 / 3; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    position: relative; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    transition: 0.3s; 
+}
+
+.manga-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.manga-item:hover .manga-card { 
+    transform: scale(1.05); 
+    border-color: #00d2ff; 
+}
+
+.manga-title { 
+    margin-top: 15px; 
+    font-size: 15px; 
+    color: #fff; 
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.5); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    padding: 0 10px; 
+}
+
+/* ==========================================================================
+   4. Ribbons
+   ========================================================================== */
+.ribbon { 
+    position: absolute; 
+    top: 12px; 
+    left: -35px; 
+    width: 130px; 
+    padding: 4px 0; 
+    color: #fff !important; 
+    text-align: center; 
+    font-size: 10px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    transform: rotate(-45deg); 
+    z-index: 10; 
+    -webkit-text-stroke: 0.5px #000; 
+    text-shadow: 1px 1px 2px #000; 
+}
+
+.ribbon-end      { background: linear-gradient(135deg, #dc3545, #721c24) !important; }
 .ribbon-updating { background: linear-gradient(135deg, #28a745, #155724) !important; }
-.ribbon-new { background: linear-gradient(135deg, #6a11cb, #2575fc) !important; }
-.ribbon-hiatus { background: linear-gradient(135deg, #ffb800, #ff8c00) !important; }
+.ribbon-new      { background: linear-gradient(135deg, #6a11cb, #2575fc) !important; }
+.ribbon-hiatus   { background: linear-gradient(135deg, #ffb800, #ff8c00) !important; }
 
-/* 5. Modal (เวอร์ชั่นคืนชีพความหล่อเหมือนอันแรก) */
+/* ==========================================================================
+   5. Modal
+   ========================================================================== */
 .modal { 
-    display: none; position: fixed; z-index: 9999; left: 0; top: 0; 
-    width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); 
-    backdrop-filter: blur(15px); align-items: center; justify-content: center; padding: 20px; 
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.9); 
+    backdrop-filter: blur(15px); 
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px; 
 }
 
 .modal-content { 
-    background: #111; border: 1px solid #333; width: 100%; max-width: 850px; 
-    max-height: 90vh; border-radius: 20px; position: relative; 
-    display: flex; gap: 30px; padding: 30px;
+    background: #111; 
+    border: 1px solid #333; 
+    width: 100%; 
+    max-width: 850px; 
+    max-height: 90vh; 
+    border-radius: 20px; 
+    position: relative; 
+    display: flex; 
+    gap: 30px; 
+    padding: 30px; 
     box-shadow: 0 0 50px rgba(0, 210, 255, 0.15); 
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .close-modal { 
-    position: absolute; right: 25px; top: 15px; color: #fff; font-size: 35px; cursor: pointer; z-index: 100;
+    position: absolute; 
+    right: 25px; 
+    top: 15px; 
+    color: #fff; 
+    font-size: 35px; 
+    cursor: pointer; 
+    z-index: 100; 
 }
 
 .modal-image-container img { 
-    width: 280px; height: 380px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    width: 280px; 
+    height: 380px; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
 }
 
-.modal-info { flex: 1; display: flex; flex-direction: column; text-align: left; overflow-y: auto; }
+.modal-info { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    text-align: left; 
+    overflow-y: auto; 
+}
 
 .modal-info h2 { margin: 0 0 10px 0; font-size: 28px; color: #00d2ff; }
 
 .status-badge { 
-    display: inline-block; padding: 5px 15px; border: 1px solid #00ff7f; 
-    color: #00ff7f; border-radius: 5px; font-size: 14px; width: fit-content; margin-bottom: 20px;
+    display: inline-block; 
+    padding: 5px 15px; 
+    border: 1px solid #00ff7f; 
+    color: #00ff7f; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    width: fit-content; 
+    margin-bottom: 20px; 
 }
 
 .description-container { 
-    background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; 
-    margin: 15px 0; border: 1px solid rgba(255,255,255,0.05); 
+    background: rgba(0,0,0,0.3); 
+    padding: 20px; 
+    border-radius: 12px; 
+    margin: 15px 0; 
+    border: 1px solid rgba(255,255,255,0.05); 
 }
+
 .description-container h3 { margin-top: 0; color: #fff; font-size: 18px; }
 .description-container p { font-size: 15px; line-height: 1.7; color: #ccc; margin: 0; }
 
-/* ส่วนปุ่มลิงก์ (แก้แค่ทรงให้มน สวยๆ และรักษา Layout เดิมไว้) */
-.modal-buttons { 
-    display: flex; 
-    gap: 10px; 
-    margin-top: 15px; 
-    flex-wrap: wrap; 
-}
+.modal-buttons { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
 
 .modal-buttons a { 
     padding: 10px 20px; 
     border: 1px solid #444; 
-    border-radius: 50px; /* ตรงนี้แหละที่ทำให้อันเดิมดูดี */
+    border-radius: 50px; 
     color: #fff; 
     text-decoration: none; 
     font-weight: bold; 
     font-size: 13px; 
-    transition: 0.3s;
+    transition: 0.3s; 
 }
 
 .modal-buttons a:hover { 
     border-color: #00d2ff; 
     background: rgba(0, 210, 255, 0.1); 
 }
-/* 6. Footer */
-.footer-links { width: 100%; display: flex; justify-content: center; gap: 15px; margin-top: 60px; padding-bottom: 80px; flex-wrap: wrap; }
-.footer-links a { min-width: 160px; padding: 12px 25px; font-size: 15px; font-weight: bold; border-radius: 50px; border: 2px solid #333; color: #fff; text-decoration: none; transition: 0.3s; }
-.footer-links a:hover { border-color: #00d2ff; background: rgba(0, 210, 255, 0.1); transform: translateY(-3px); }
 
-/* 7. Responsive */
+/* ==========================================================================
+   6. Footer
+   ========================================================================== */
+.footer-links { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 60px; 
+    padding-bottom: 80px; 
+    flex-wrap: wrap; 
+}
+
+.footer-links a { 
+    min-width: 160px; 
+    padding: 12px 25px; 
+    font-size: 15px; 
+    font-weight: bold; 
+    border-radius: 50px; 
+    border: 2px solid #333; 
+    color: #fff; 
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+
+.footer-links a:hover { 
+    border-color: #00d2ff; 
+    background: rgba(0, 210, 255, 0.1); 
+    transform: translateY(-3px); 
+}
+
+/* ==========================================================================
+   7. Responsive
+   ========================================================================== */
 @media screen and (max-width: 768px) {
-    .modal-content { flex-direction: column; padding: 20px; align-items: center; overflow-y: auto; }
+    .modal-content { 
+        flex-direction: column; 
+        padding: 20px; 
+        align-items: center; 
+        overflow-y: auto; 
+    }
     .modal-image-container img { width: 200px; height: 280px; }
     .modal-info { text-align: center; }
     .status-badge { align-self: center; }
