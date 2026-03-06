@@ -209,7 +209,13 @@ body {
 .description-container h3 { margin-top: 0; color: #fff; font-size: 18px; }
 .description-container p { font-size: 15px; line-height: 1.7; color: #ccc; margin: 0; }
 
-.modal-buttons { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+.modal-buttons { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-top: 10px;    /* ให้ปุ่มอยู่ใกล้หัวข้อ */
+    margin-bottom: 20px; /* ให้มีช่องว่างระหว่างปุ่มกับกล่องเรื่องย่อด้านล่าง */
+}
 
 .modal-buttons a { 
     padding: 10px 20px; 
