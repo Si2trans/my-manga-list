@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Si2trans</title>
-    
     <link rel="icon" type="image/png" href="favicon.png"> 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -43,20 +42,20 @@
     <div id="manga-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <div class="modal-image-container">
-                    <img id="modal-img" src="" alt="">
+            
+            <div class="modal-image-container">
+                <img id="modal-img" src="" alt="Manga Image">
+            </div>
+            
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <div class="status-badge" id="modal-status"></div>
+                
+                <div class="description-container">
+                    <p id="modal-description"></p>
                 </div>
-                <div class="modal-info">
-                    <h2 id="modal-title"></h2>
-                    <div class="status-badge" id="modal-status"></div>
-                    <div class="description-container">
-                        <h3>เรื่องย่อ</h3>
-                        <p id="modal-description"></p>
-                    </div>
-                    <div id="modal-links" class="modal-buttons">
-                        </div>
-                </div>
+                
+                <div id="modal-links" class="modal-buttons"></div>
             </div>
         </div>
     </div>
