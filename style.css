@@ -217,15 +217,27 @@ body {
     margin-bottom: 20px; /* ให้มีช่องว่างระหว่างปุ่มกับกล่องเรื่องย่อด้านล่าง */
 }
 
-.modal-buttons a { 
-    padding: 10px 20px; 
-    border: 1px solid #444; 
-    border-radius: 50px; 
-    color: #fff; 
-    text-decoration: none; 
-    font-weight: bold; 
-    font-size: 13px; 
-    transition: 0.3s; 
+/* ปรับปุ่มลิงก์ให้ไอคอนกับตัวหนังสือเสมอกัน */
+.modal-buttons a {
+    display: flex;           /* ใช้ flex จัดการ */
+    align-items: center;    /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    padding: 10px 20px;
+    border: 1px solid #444;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.3s;
+    gap: 8px; /* เว้นระยะห่างระหว่างไอคอนกับตัวหนังสือ */
+}
+
+/* เพิ่มการปรับขนาดไอคอนในปุ่ม (ถ้ามีไอคอนอยู่ในปุ่ม) */
+.modal-buttons a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .modal-buttons a:hover { 
