@@ -69,34 +69,29 @@ body {
 .description-container h3 { margin-top: 0; color: #fff; font-size: 18px; }
 .description-container p { font-size: 15px; line-height: 1.7; color: #ccc; margin: 0; }
 
-/* ส่วนปุ่มลิงก์ (ปรับให้เป็นทรงมนสวยๆ เหมือนในรูป) */
+/* ส่วนปุ่มลิงก์ (แก้แค่ทรงให้มน สวยๆ และรักษา Layout เดิมไว้) */
 .modal-buttons { 
     display: flex; 
+    gap: 10px; 
+    margin-top: 15px; 
     flex-wrap: wrap; 
-    gap: 15px; 
-    margin-top: 20px; 
 }
 
 .modal-buttons a { 
-    flex: 1; 
-    min-width: 140px; 
-    padding: 12px 25px; 
-    border: 1px solid #333; 
-    border-radius: 50px; /* ปรับให้เป็นทรงมนกลม */
+    padding: 10px 20px; 
+    border: 1px solid #444; 
+    border-radius: 50px; /* ตรงนี้แหละที่ทำให้อันเดิมดูดี */
     color: #fff; 
     text-decoration: none; 
     font-weight: bold; 
-    text-align: center; 
-    font-size: 14px; 
-    background: transparent; 
+    font-size: 13px; 
     transition: 0.3s;
 }
 
 .modal-buttons a:hover { 
-    background: #222; 
-    border-color: #555; 
+    border-color: #00d2ff; 
+    background: rgba(0, 210, 255, 0.1); 
 }
-
 /* 6. Footer */
 .footer-links { width: 100%; display: flex; justify-content: center; gap: 15px; margin-top: 60px; padding-bottom: 80px; flex-wrap: wrap; }
 .footer-links a { min-width: 160px; padding: 12px 25px; font-size: 15px; font-weight: bold; border-radius: 50px; border: 2px solid #333; color: #fff; text-decoration: none; transition: 0.3s; }
