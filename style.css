@@ -19,7 +19,7 @@ body { font-family: 'Prompt', sans-serif; padding: 40px 0; color: #fff; backgrou
 
 /* 4. Container & Cards (แบบนิ่ง) */
 .manga-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; padding: 0 10px; }
-.manga-item { display: flex; flex-direction: column; align-items: center; width: 280px; text-align: center; cursor: pointer; }
+.manga-item { display: flex; flex-direction: column; align-items: center; width: 280px; text-align: center; cursor: pointer; margin-bottom: 20px; }
 .manga-card { 
     width: 280px; height: 400px; border-radius: 12px; overflow: hidden; 
     border: 1px solid rgba(255, 255, 255, 0.1); position: relative;
@@ -28,22 +28,37 @@ body { font-family: 'Prompt', sans-serif; padding: 40px 0; color: #fff; backgrou
 .manga-card img { width: 100%; height: 100%; object-fit: cover; }
 .manga-item:hover .manga-card { transform: scale(1.03); border-color: #00d2ff; }
 
-/* 5. Ribbon (สีพื้นหลังเดิม แต่ฟ้อนขาวทั้งหมด) */
+/* เพิ่มใหม่: ชื่อเรื่องและการปรับแต่งเอฟเฟกต์ */
+.manga-title {
+    width: 100%; max-width: 280px;
+    margin-top: 15px; /* ขยับลงมาตามที่พี่สั่ง */
+    font-size: 15px; font-weight: 500;
+    text-align: center; color: #fff;
+    text-shadow: 0 0 5px rgba(0, 210, 255, 0.5); /* เอฟเฟกต์แสง */
+    transition: 0.3s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    padding: 0 10px;
+}
+.manga-item:hover .manga-title {
+    color: #00d2ff;
+    text-shadow: 0 0 10px #00d2ff;
+    transform: translateY(2px);
+}
+
+/* 5. Ribbon */
 .ribbon {
     position: absolute; top: 15px; left: -30px; width: 130px; padding: 5px 0;
-    color: #fff !important; /* ฟ้อนขาวแน่นอน */
+    color: #fff !important;
     text-align: center; font-size: 11px; font-weight: bold;
     text-transform: uppercase; transform: rotate(-45deg); z-index: 10;
     -webkit-text-stroke: 0.5px #000; text-shadow: 1px 1px 2px #000;
 }
-
-/* สีพื้นหลังแต่ละสถานะ (คงเดิม) */
 .ribbon-end { background: linear-gradient(135deg, #dc3545, #721c24) !important; }
 .ribbon-updating { background: linear-gradient(135deg, #28a745, #155724) !important; }
 .ribbon-new { background: linear-gradient(135deg, #6a11cb, #2575fc) !important; }
 .ribbon-hiatus { background: linear-gradient(135deg, #ffb800, #ff8c00) !important; }
 
-/* 6. Modal (แบบเดิมที่พี่ชอบ) */
+/* 6. Modal */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); align-items: center; justify-content: center; padding: 10px; }
 .modal-content { background: #111; border: 1px solid #333; width: 100%; max-width: 800px; max-height: 90vh; border-radius: 20px; position: relative; animation: modalFadeIn 0.3s ease-out; box-shadow: 0 0 40px rgba(0, 210, 255, 0.2); display: flex; flex-direction: column; overflow: hidden; }
 @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
@@ -60,6 +75,6 @@ body { font-family: 'Prompt', sans-serif; padding: 40px 0; color: #fff; backgrou
 .link-purple { color: #a020f0; border-color: #a020f0; } .link-purple:hover { background: #a020f0; color: #fff; }
 .link-light-purple { color: #e0b0ff; border-color: #e0b0ff; } .link-light-purple:hover { background: #e0b0ff; color: #000; }
 
-/* 7. Footer (แบบเดิม) */
+/* 7. Footer */
 .footer-links { width: 100%; display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 50px; padding: 0 20px 80px 20px; box-sizing: border-box; flex-wrap: wrap; }
 .footer-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 160px; padding: 12px 20px; font-size: 15px; font-weight: bold; text-decoration: none; border-radius: 50px; border: 2px solid; transition: 0.3s; }
