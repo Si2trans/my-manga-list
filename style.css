@@ -158,3 +158,9 @@ body::before {
     background: linear-gradient(135deg, #dc3545, #721c24) !important; 
     box-shadow: 0 0 10px rgba(220, 53, 69, 0.4);
 }
+
+/* สีน้ำเงิน: ของใหม่ */
+.ribbon-new { 
+    background: linear-gradient(135deg, #6a11cb, #2575fc) !important; 
+    box-shadow: 0 0 10px rgba(37, 117, 252, 0.4);
+}
