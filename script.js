@@ -107,8 +107,13 @@ function openMangaModal(manga) {
     document.getElementById('modal-img').src = manga.image;
     document.getElementById('modal-title').innerText = manga.title;
     
+    // --- เพิ่มส่วนนี้เข้าไปครับ ---
+    const descEl = document.getElementById('modal-description');
+    descEl.textContent = manga.description || 'ไม่มีเรื่องย่อ...';
+    // --------------------------
+
     const statusEl = document.getElementById('modal-status');
-    statusEl.textContent = manga.status || 'ยังไม่ระบุ'; // ใส่สถานะก่อน
+    statusEl.textContent = manga.status || 'ยังไม่ระบุ'; 
     const latestSpan = document.createElement('span');
     latestSpan.style.color = '#00d2ff';
     latestSpan.style.marginLeft = '8px';
