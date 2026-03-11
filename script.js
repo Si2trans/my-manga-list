@@ -34,29 +34,26 @@ function safeUrl(url) {
 }
 
 // ==========================================================================
-// CSV Parser
+// CSV Parser — ใช้ PapaParse รองรับ quoted fields (คอมม่าในข้อความ)
 // คอลัมน์: title, image, status, description, latest,
 //          mynovel, readrealm, readtoon, powerLevel
 // powerLevel ใช้ | คั่นแต่ละระดับ เช่น "หลอมเอ็น|หล่อกระดูก|เปลี่ยนโลหิต"
 // ==========================================================================
 function parseCSV(text) {
-  return text.split('\n').slice(1).filter(l => l.trim()).map(line => {
-    const v = line.split(',');
-    return {
-      title:       v[0]?.trim() || '',
-      image:       v[1]?.trim() || '',
-      status:      v[2]?.trim() || '',
-      description: v[3]?.trim() || '',
-      latest:      v[4]?.trim() || '',
-      links: {
-        mynovel:   v[5]?.trim() || '',
-        readrealm: v[6]?.trim() || '',
-        readtoon:  v[7]?.trim() || '',
-      },
-      // v[8]: ระดับพลัง คั่นด้วย | เช่น "หลอมเอ็น|หล่อกระดูก|ห้วงจิตวิญญาณ"
-      powerLevel: v[8]?.trim() || '',
-    };
-  });
+  const { data } = Papa.parse(text, { header: false, skipEmptyLines: true });
+  return data.slice(1).map(v => ({
+    title:       v[0]?.trim() || '',
+    image:       v[1]?.trim() || '',
+    status:      v[2]?.trim() || '',
+    description: v[3]?.trim() || '',
+    latest:      v[4]?.trim() || '',
+    links: {
+      mynovel:   v[5]?.trim() || '',
+      readrealm: v[6]?.trim() || '',
+      readtoon:  v[7]?.trim() || '',
+    },
+    powerLevel:  v[8]?.trim() || '',
+  }));
 }
 
 // ==========================================================================
@@ -110,6 +107,9 @@ function render(list) {
   list.forEach((m, i) => {
     const card = document.createElement('div');
     card.className = 'manga-card';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', m.title);
     card.style.animationDelay = `${Math.min(i * 0.03, 0.5)}s`;
 
     const rc     = getRibbonClass(m.status);
@@ -148,6 +148,9 @@ function render(list) {
     }, { passive: true });
 
     card.onclick = () => openModal(m);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(m); }
+    });
     grid.appendChild(card);
   });
 }
@@ -253,7 +256,23 @@ document.querySelectorAll('.mtab').forEach(btn => {
   btn.onclick = () => switchModalTab(btn.dataset.tab);
 });
 
+let lastFocused = null;
+
+function trapFocus(e) {
+  const modal = document.getElementById('modal');
+  const focusable = modal.querySelectorAll(
+    'button:not([disabled]), a[href], input, [tabindex]:not([tabindex="-1"])'
+  );
+  const first = focusable[0];
+  const last  = focusable[focusable.length - 1];
+  if (e.key === 'Tab') {
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+  }
+}
+
 function openModal(m) {
+  lastFocused = document.activeElement;
   document.getElementById('modal-img').src                       = m.image;
   document.getElementById('modal-bg-art').style.backgroundImage = `url('${m.image}')`;
   document.getElementById('modal-title').textContent            = m.title;
@@ -275,6 +294,7 @@ function openModal(m) {
     const a = document.createElement('a');
     a.href = safeUrl(url);
     a.target = '_blank';
+    a.rel = 'noopener noreferrer';
     a.className = 'modal-link-btn';
     const img = document.createElement('img');
     img.src = `images/${p.icon}`;
@@ -296,11 +316,15 @@ function openModal(m) {
 
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.getElementById('modal-close').focus();
+  document.addEventListener('keydown', trapFocus);
 }
 
 function closeModal() {
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
+  document.removeEventListener('keydown', trapFocus);
+  if (lastFocused) lastFocused.focus();
 }
 
 document.getElementById('modal-close').onclick = closeModal;
@@ -312,26 +336,45 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 // ==========================================================================
 // Load Data
 // ==========================================================================
+const CACHE_KEY = 'si2_manga_v3';
+const CACHE_TTL = 30 * 60 * 1000; // 30 นาที
+
+function saveCache(data) {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+  } catch { /* quota exceeded — ไม่ cache */ }
+}
+
+function loadCache() {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const { ts, data } = JSON.parse(raw);
+    if (Date.now() - ts > CACHE_TTL) { localStorage.removeItem(CACHE_KEY); return null; }
+    return data;
+  } catch { localStorage.removeItem(CACHE_KEY); return null; }
+}
 function showGrid() {
   document.getElementById('skeleton-grid').style.display = 'none';
   document.getElementById('manga-grid').style.display    = 'grid';
 }
 
 async function load() {
-  try {
-    const cached = localStorage.getItem('si2_manga_v3');
-    if (cached) {
-      allManga = JSON.parse(cached);
-      showGrid(); render(allManga);
-    }
-  } catch { localStorage.removeItem('si2_manga_v3'); }
+  const cached = loadCache();
+  if (cached) {
+    allManga = cached;
+    showGrid(); render(allManga);
+  }
 
   try {
     const res   = await fetch(CSV_URL);
     const fresh = parseCSV(await res.text());
     if (JSON.stringify(fresh) !== JSON.stringify(allManga)) {
       allManga = fresh;
-      localStorage.setItem('si2_manga_v3', JSON.stringify(allManga));
+      saveCache(allManga);
+      showGrid(); render(allManga);
+    } else if (!cached) {
+      // ข้อมูลเหมือนกัน แต่ยังไม่ได้แสดง
       showGrid(); render(allManga);
     }
   } catch (err) {
