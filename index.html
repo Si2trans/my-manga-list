@@ -1,65 +1,151 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Si2trans</title>
-    <link rel="icon" type="image/png" href="favicon.png"> 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Si2Trans</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sarabun:wght@300;400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">Si2trans</div>
+<!-- DYNAMIC BACKGROUND -->
+<div class="bg-blur" id="bg-blur"></div>
+<div class="bg-dim"></div>
+<div class="scanlines"></div>
 
-    <div class="search-container">
-        <input type="text" id="manga-search" placeholder="ค้นหาชื่อมังงะ...">
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-mark">
+        <span class="logo-s">S</span><span class="logo-i">i</span><span class="logo-2">2</span>
+      </div>
+      <div class="logo-text-block">
+        <div class="logo-main">TRANS</div>
+        <div class="logo-sub">มังฮัวแปลไทย</div>
+      </div>
     </div>
+    <div class="header-line"></div>
+  </div>
+</header>
 
-    <div class="manga-container" id="skeleton-loader">
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
+<!-- CONTROL BAR -->
+<div class="control-bar">
+  <div class="control-inner">
+    <div class="search-box">
+      <svg class="search-svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 10L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="search" placeholder="ค้นหามังงะ...">
+      <button class="search-clear" id="search-clear" style="display:none">✕</button>
     </div>
-
-    <div class="manga-container" id="manga-list"></div>
-    
-    <div class="footer-links">
-        <a href="https://mynovel.co/w/Si2trans" class="link-blue">
-            <img src="images/icon-mynovel.png" style="width:20px; height:20px; vertical-align:middle; margin-right:8px; object-fit:contain;">
-            MYNOVEL
-        </a>
-        <a href="https://readrealm.co/profile/si2transs" class="link-purple">
-            <img src="images/icon-readrealm.png" style="width:20px; height:20px; vertical-align:middle; margin-right:8px; object-fit:contain;">
-            ReadRealm
-        </a>
-        <a href="https://readtoon.com/profile/si2trans" class="link-light-purple">
-            <img src="images/icon-readtoon.png" style="width:20px; height:20px; vertical-align:middle; margin-right:8px; object-fit:contain;">
-            ReadToon
-        </a>
+    <div class="filter-tabs">
+      <button class="ftab active" data-filter="all">ทั้งหมด</button>
+      <button class="ftab" data-filter="อัปเดต">อัปเดต</button>
+      <button class="ftab" data-filter="จบ">จบแล้ว</button>
+      <button class="ftab" data-filter="ใหม่">ใหม่</button>
+      <button class="ftab" data-filter="หยุด">หยุด</button>
     </div>
+  </div>
+</div>
 
-    <div id="manga-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            
-            <div class="modal-image-container">
-                <img id="modal-img" src="" alt="Manga Image">
-            </div>
-            
-            <div class="modal-info">
-                <h2 id="modal-title"></h2>
-                <div class="status-badge" id="modal-status"></div>
-                
-                <div id="modal-links" class="modal-buttons"></div>
-                
-                <div class="description-container">
-                    <p id="modal-description"></p>
-                </div>
-            </div>
+<!-- MANGA GRID -->
+<main class="grid-section">
+  <div class="grid-header">
+    <div class="grid-title-line">
+      <div class="grid-title-accent"></div>
+      <h2 class="grid-title">MANGA LIST</h2>
+    </div>
+    <div class="grid-count" id="grid-count">— รายการ</div>
+  </div>
+
+  <div class="manga-grid" id="skeleton-grid">
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+  </div>
+
+  <div class="manga-grid" id="manga-grid" style="display:none"></div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SI2TRANS</div>
+    <p class="footer-tagline"></p>
+    <div class="footer-platforms">
+      <a href="https://mynovel.co/w/Si2trans" target="_blank" class="plat-btn plat-mynovel">
+        <img src="images/icon-mynovel.png" onerror="this.style.display='none'" alt=""> <span>MYNOVEL</span>
+      </a>
+      <a href="https://readrealm.co/profile/si2transs" target="_blank" class="plat-btn plat-readrealm">
+        <img src="images/icon-readrealm.png" onerror="this.style.display='none'" alt=""> <span>ReadRealm</span>
+      </a>
+      <a href="https://readtoon.com/profile/si2trans" target="_blank" class="plat-btn plat-readtoon">
+        <img src="images/icon-readtoon.png" onerror="this.style.display='none'" alt=""> <span>ReadToon</span>
+      </a>
+    </div>
+    <div class="footer-copy"></div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-container">
+    <div class="modal-bg-art" id="modal-bg-art"></div>
+    <div class="modal-bg-dim"></div>
+    <button class="modal-close-btn" id="modal-close">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="modal-inner">
+      <div class="modal-poster-col">
+        <div class="modal-poster-wrap">
+          <img id="modal-img" src="" alt="">
+          <div class="modal-poster-shine"></div>
         </div>
-    </div>
+      </div>
+      <div class="modal-info-col">
+        <div class="modal-tags-row">
+          <span class="modal-status-tag" id="modal-status">—</span>
+          <span class="modal-chapter-tag" id="modal-chapter"></span>
+        </div>
+        <h2 class="modal-title" id="modal-title">—</h2>
+        <div class="modal-divider"></div>
 
-    <script src="script.js"></script>
+        <!-- TAB BAR -->
+        <div class="modal-tabs" id="modal-tabs">
+          <button class="mtab active" data-tab="detail">รายละเอียด</button>
+          <button class="mtab" data-tab="power" id="tab-power-btn">⚡ ระดับพลัง</button>
+        </div>
+
+        <!-- TAB: รายละเอียด -->
+        <div class="modal-tab-panel" id="tab-detail">
+          <p class="modal-desc" id="modal-desc">—</p>
+          <div class="modal-read-label">อ่านได้ที่</div>
+          <div class="modal-links" id="modal-links"></div>
+        </div>
+
+        <!-- TAB: ระดับพลัง -->
+        <div class="modal-tab-panel" id="tab-power" style="display:none">
+          <div id="modal-power"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
