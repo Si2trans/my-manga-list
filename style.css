@@ -235,6 +235,20 @@ header {
   -webkit-box-orient: vertical; overflow: hidden;
 }
 
+/* Keyboard focus styles */
+.manga-card:focus-visible .card-thumb {
+  border-color: rgba(255,61,113,0.6);
+  box-shadow: 0 0 0 3px rgba(255,61,113,0.35);
+  outline: none;
+}
+.modal-close-btn:focus-visible,
+.mtab:focus-visible,
+.ftab:focus-visible,
+.modal-link-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* Ribbon */
 .ribbon {
   position: absolute; top: 0; left: 0; z-index: 2;
@@ -420,6 +434,10 @@ footer {
   transition: all 0.2s; flex: 1; justify-content: center;
   -webkit-tap-highlight-color: transparent;
   min-width: 110px;
+}
+.modal-link-btn:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.2);
 }
 .modal-link-btn:active {
   background: rgba(255,61,113,0.12); border-color: rgba(255,61,113,0.5);
