@@ -785,15 +785,17 @@ function renderChapterGroups(chapters, listEl, newestFirst = false) {
     return;
   }
 
-  groups.forEach(group => {
+groups.forEach((group, index) => {
+    const isFirstGroup = index === 0;
     const groupEl = document.createElement('div');
     groupEl.className = 'chapter-group';
-
+    if (isFirstGroup) groupEl.classList.add('is-open');
+  
     const summary = document.createElement('button');
     summary.type = 'button';
     summary.className = 'chapter-group-summary';
-    summary.setAttribute('aria-expanded', 'false');
-
+    summary.setAttribute('aria-expanded', String(isFirstGroup));
+  
     const groupLabel = document.createElement('span');
     groupLabel.className = 'chapter-group-label';
     groupLabel.textContent = group.label || `${group.start} - ${group.end}`;
@@ -812,7 +814,7 @@ function renderChapterGroups(chapters, listEl, newestFirst = false) {
 
     const groupList = document.createElement('div');
     groupList.className = 'chapter-group-list';
-    groupList.hidden = true;
+    groupList.hidden = !isFirstGroup;
     group.items.forEach(item => groupList.appendChild(createChapterChip(item)));
 
     summary.addEventListener('click', () => {
