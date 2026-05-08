@@ -2123,6 +2123,20 @@ body.modal-open .bg-blur.visible {
   .chapter-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-height: 240px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .chapter-list.chapter-list-grouped {
+    max-height: min(42vh, 320px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
   }
 
   .chapter-chip {
