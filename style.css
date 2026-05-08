@@ -2479,13 +2479,53 @@ body.modal-open .bg-blur.visible {
   body.gateway-ready .grid-section,
   body.gateway-ready footer,
   .manga-card,
-  .modal-tab-panel,
-  .modal-overlay.open,
-  .modal-overlay.open .modal-container,
-  .gateway-frame-shell,
-  .gateway-field,
-  .gateway-progress span {
+  .modal-tab-panel {
     animation: none !important;
+  }
+
+  .gateway-field {
+    animation: gatewayGrid 2.4s linear infinite !important;
+    opacity: 0.22;
+  }
+
+  .gateway-frame-shell {
+    animation: gatewayBoot 360ms cubic-bezier(.2,.9,.2,1) both !important;
+    filter: none !important;
+    will-change: auto !important;
+  }
+
+  .gateway-progress span {
+    transform: translate3d(-120%, 0, 0);
+    will-change: transform;
+    animation: gatewayLoadMobile 1.05s ease-in-out infinite !important;
+  }
+
+  .gateway-intro.is-exiting {
+    animation: gatewayOut 420ms ease forwards !important;
+  }
+
+  .gateway-intro.is-exiting .gateway-frame-shell {
+    animation: none !important;
+  }
+
+  .modal-overlay.open {
+    animation: fadeIn 0.2s ease !important;
+  }
+
+  .modal-overlay.open .modal-container {
+    animation: detailMorphInMobile 320ms cubic-bezier(.2,.86,.14,1) both !important;
+  }
+
+  .modal-bg-art {
+    display: block !important;
+    filter: blur(14px) brightness(0.2) saturate(1.25) !important;
+    opacity: 0.36 !important;
+    transform: scale(1.04) !important;
+  }
+
+  .modal-poster-shine {
+    display: block !important;
+    opacity: 0.28 !important;
   }
 
   .manga-card {
@@ -2524,11 +2564,9 @@ body.modal-open .bg-blur.visible {
     transition-duration: 0.12s !important;
   }
 
-  .modal-bg-art,
-  .modal-poster-shine,
   .morph-ghost,
   .morph-close-ghost {
-    display: none !important;
+    box-shadow: none !important;
   }
 
   .modal-container,
@@ -2537,4 +2575,15 @@ body.modal-open .bg-blur.visible {
   .grid-count {
     box-shadow: none !important;
   }
+}
+
+@keyframes gatewayLoadMobile {
+  0% { transform: translate3d(-120%, 0, 0); }
+  100% { transform: translate3d(245%, 0, 0); }
+}
+
+@keyframes detailMorphInMobile {
+  0% { opacity: 0; transform: translateY(26px) scale(0.82); clip-path: inset(22% 18% 22% 18% round 8px); }
+  55% { opacity: 1; transform: translateY(3px) scale(1.01); clip-path: inset(4% 4% 4% 4% round 8px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0 round 8px); }
 }

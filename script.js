@@ -30,6 +30,10 @@ function shouldUseHeavyEffects() {
   return !prefersReducedMotion.matches && !coarsePointer.matches;
 }
 
+function shouldUseModalEffects() {
+  return !prefersReducedMotion.matches;
+}
+
 // ==========================================================================
 // Utility
 // ==========================================================================
@@ -607,7 +611,7 @@ function trapFocus(e) {
 }
 
 function spawnDetailEffect(sourceEl) {
-  if (!shouldUseHeavyEffects()) return;
+  if (!shouldUseModalEffects()) return;
   if (!sourceEl) return;
 
   const rect = sourceEl.getBoundingClientRect();
@@ -628,16 +632,17 @@ function spawnDetailEffect(sourceEl) {
   const targetL = (window.innerWidth - targetW) / 2;
   const targetT = (window.innerHeight - targetH) / 2;
 
+  const heavy = shouldUseHeavyEffects();
   ghost.animate([
-    { left: `${rect.left}px`, top: `${rect.top}px`, width: `${rect.width}px`, height: `${rect.height}px`, opacity: 0.78, filter: 'blur(0px)' },
-    { left: `${targetL}px`, top: `${targetT}px`, width: `${targetW}px`, height: `${targetH}px`, opacity: 0, filter: 'blur(9px)' },
-  ], { duration: 520, easing: 'cubic-bezier(.2,.8,.15,1)', fill: 'forwards' });
+    { left: `${rect.left}px`, top: `${rect.top}px`, width: `${rect.width}px`, height: `${rect.height}px`, opacity: heavy ? 0.78 : 0.58, filter: 'blur(0px)' },
+    { left: `${targetL}px`, top: `${targetT}px`, width: `${targetW}px`, height: `${targetH}px`, opacity: 0, filter: heavy ? 'blur(9px)' : 'blur(0px)' },
+  ], { duration: heavy ? 520 : 320, easing: 'cubic-bezier(.2,.8,.15,1)', fill: 'forwards' });
 
-  setTimeout(() => ghost.remove(), 560);
+  setTimeout(() => ghost.remove(), heavy ? 560 : 360);
 }
 
 function spawnCloseEffect(targetEl) {
-  if (!shouldUseHeavyEffects()) return;
+  if (!shouldUseModalEffects()) return;
   const modal = document.getElementById('modal');
   const modalPanel = modal.querySelector('.modal-container');
   if (!targetEl || !modalPanel) return;
@@ -654,12 +659,13 @@ function spawnCloseEffect(targetEl) {
   });
   document.body.appendChild(ghost);
 
+  const heavy = shouldUseHeavyEffects();
   ghost.animate([
-    { left: `${start.left}px`, top: `${start.top}px`, width: `${start.width}px`, height: `${start.height}px`, opacity: 0.9, filter: 'blur(0px)' },
-    { left: `${end.left}px`, top: `${end.top}px`, width: `${end.width}px`, height: `${end.height}px`, opacity: 0, filter: 'blur(8px)' },
-  ], { duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
+    { left: `${start.left}px`, top: `${start.top}px`, width: `${start.width}px`, height: `${start.height}px`, opacity: heavy ? 0.9 : 0.62, filter: 'blur(0px)' },
+    { left: `${end.left}px`, top: `${end.top}px`, width: `${end.width}px`, height: `${end.height}px`, opacity: 0, filter: heavy ? 'blur(8px)' : 'blur(0px)' },
+  ], { duration: heavy ? 420 : 280, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' });
 
-  setTimeout(() => ghost.remove(), 470);
+  setTimeout(() => ghost.remove(), heavy ? 470 : 320);
 }
 
 function setPlatformButtonState(platformKey) {
