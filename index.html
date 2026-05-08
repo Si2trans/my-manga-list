@@ -7,9 +7,27 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sarabun:wght@300;400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260508-footer-static">
 </head>
-<body>
+<body class="gateway-loading">
+
+<!-- GATEWAY INTRO -->
+<div class="gateway-intro" id="gateway-intro" aria-live="polite" aria-label="เชื่อมต่อ Si2Trans">
+  <div class="gateway-field" aria-hidden="true"></div>
+  <div class="gateway-tunnel" aria-hidden="true"></div>
+  <div class="gateway-frame-shell">
+    <div class="gateway-panel" role="status">
+      <div class="gateway-panel-top" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="gateway-copy">
+        <div class="gateway-copy-main">เชื่อมต่อ Si2Trans</div>
+        <div class="gateway-copy-sub">กำลังไปยังหน้าหลัก.....</div>
+        <div class="gateway-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- DYNAMIC BACKGROUND -->
 <div class="bg-blur" id="bg-blur"></div>
@@ -19,16 +37,15 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <div class="logo-block">
-      <div class="logo-mark">
-        <span class="logo-s">S</span><span class="logo-i">i</span><span class="logo-2">2</span>
+    <div class="logo-block logo-system" aria-label="SI2 TRANS มังฮัวแปลไทย">
+      <div class="logo-wordmark" aria-hidden="true">
+        <span class="logo-si2">
+          <span class="logo-sys-s">S</span><span class="logo-sys-i">I</span><span class="logo-sys-two">2</span>
+        </span>
+        <span class="logo-trans">TRANS</span>
       </div>
-      <div class="logo-text-block">
-        <div class="logo-main">TRANS</div>
-        <div class="logo-sub">มังฮัวแปลไทย</div>
-      </div>
+      <div class="logo-tagline">มังฮัวแปลไทย</div>
     </div>
-    <div class="header-line"></div>
   </div>
 </header>
 
@@ -40,7 +57,7 @@
         <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.5"/>
         <path d="M10 10L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      <input type="text" id="search" placeholder="ค้นหามังงะ..." aria-label="ค้นหามังงะ">
+      <input type="text" id="search" placeholder="ค้นหามังฮัว..." aria-label="ค้นหามังฮัว">
       <button class="search-clear" id="search-clear" style="display:none" aria-label="ล้างการค้นหา">✕</button>
     </div>
     <div class="filter-tabs" role="group" aria-label="กรองตามสถานะ">
@@ -58,9 +75,11 @@
   <div class="grid-header">
     <div class="grid-title-line">
       <div class="grid-title-accent"></div>
-      <h2 class="grid-title">MANGA LIST</h2>
+      <div>
+        <h2 class="grid-title">All of SI2TRANS</h2>
+      </div>
     </div>
-    <div class="grid-count" id="grid-count">— รายการ</div>
+    <div class="grid-count" id="grid-count">— เรื่อง</div>
   </div>
 
   <div class="manga-grid" id="skeleton-grid">
@@ -127,7 +146,7 @@
         <!-- TAB BAR -->
         <div class="modal-tabs" id="modal-tabs">
           <button class="mtab active" data-tab="detail">รายละเอียด</button>
-          <button class="mtab" data-tab="power" id="tab-power-btn">⚡ ระดับพลัง</button>
+          <button class="mtab" data-tab="power" id="tab-power-btn">ระดับพลัง</button>
         </div>
 
         <!-- TAB: รายละเอียด -->
@@ -135,6 +154,22 @@
           <p class="modal-desc" id="modal-desc">—</p>
           <div class="modal-read-label">อ่านได้ที่</div>
           <div class="modal-links" id="modal-links"></div>
+          <div class="chapter-console" id="chapter-console" hidden>
+            <div class="chapter-console-head">
+              <div>
+                <div class="chapter-console-kicker">CHAPTER GATE</div>
+                <div class="chapter-console-title" id="chapter-console-title">เลือกตอน</div>
+              </div>
+              <div class="chapter-console-actions">
+                <button class="chapter-order-toggle is-newest-first" id="chapter-order-toggle" type="button" aria-label="สลับไปตอนแรกสุด">
+                  <span class="chapter-order-icon" aria-hidden="true"></span>
+                  <span id="chapter-order-label">ตอนแรกสุด</span>
+                </button>
+                <a class="chapter-source-link" id="chapter-source-link" href="#" target="_blank" rel="noopener noreferrer">หน้าเรื่อง</a>
+              </div>
+            </div>
+            <div class="chapter-list" id="chapter-list"></div>
+          </div>
         </div>
 
         <!-- TAB: ระดับพลัง -->
@@ -147,6 +182,6 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-<script src="script.js"></script>
+<script src="script.js?v=20260508-footer-static"></script>
 </body>
 </html>
