@@ -23,6 +23,12 @@ const PLATFORMS = [
 
 let chapterIndex = {};
 let chapterRuleIndex = {};
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const coarsePointer = window.matchMedia('(hover: none), (pointer: coarse)');
+
+function shouldUseHeavyEffects() {
+  return !prefersReducedMotion.matches && !coarsePointer.matches;
+}
 
 // ==========================================================================
 // Utility
@@ -405,6 +411,7 @@ const bgBlur = document.getElementById('bg-blur');
 let currentBg = '';
 
 function setBg(imageUrl) {
+  if (!shouldUseHeavyEffects()) return;
   if (!imageUrl || imageUrl === currentBg) return;
   currentBg = imageUrl;
   bgBlur.style.backgroundImage = `url('${imageUrl}')`;
@@ -424,7 +431,7 @@ function render(list) {
   const grid    = document.getElementById('manga-grid');
   const countEl = document.getElementById('grid-count');
   countEl.textContent = `${list.length} เรื่อง`;
-  grid.innerHTML = '';
+  grid.replaceChildren();
 
   if (!list.length) {
     grid.innerHTML = `
@@ -434,6 +441,8 @@ function render(list) {
       </div>`;
     return;
   }
+
+  const fragment = document.createDocumentFragment();
 
   list.forEach((m, i) => {
     const card = document.createElement('div');
@@ -449,7 +458,7 @@ function render(list) {
     card.innerHTML = `
       <div class="card-thumb">
         ${ribbon}
-        <img src="${esc(m.image)}" alt="${esc(m.title)}" loading="lazy">
+        <img src="${esc(m.image)}" alt="${esc(m.title)}" loading="lazy" decoding="async">
         <div class="card-overlay">
           <div class="card-overlay-desc">${esc(m.description)}</div>
         </div>
@@ -462,30 +471,23 @@ function render(list) {
       </div>
     `;
 
-    // Background on hover
-    card.addEventListener('mouseenter', () => {
-      clearTimeout(bgTimeout);
-      if (m.image) setBg(m.image);
-    });
-    card.addEventListener('mouseleave', () => {
-      bgTimeout = setTimeout(clearBg, 300);
-    });
-
-    // Touch support
-    card.addEventListener('touchstart', () => {
-      if (m.image) setBg(m.image);
-      card.classList.add('touched');
-    }, { passive: true });
-    card.addEventListener('touchend', () => {
-      setTimeout(() => card.classList.remove('touched'), 300);
-    }, { passive: true });
+    if (shouldUseHeavyEffects()) {
+      card.addEventListener('mouseenter', () => {
+        clearTimeout(bgTimeout);
+        if (m.image) setBg(m.image);
+      });
+      card.addEventListener('mouseleave', () => {
+        bgTimeout = setTimeout(clearBg, 300);
+      });
+    }
 
     card.onclick = () => openModal(m, card);
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(m, card); }
     });
-    grid.appendChild(card);
+    fragment.appendChild(card);
   });
+  grid.appendChild(fragment);
 }
 
 // ==========================================================================
@@ -605,6 +607,7 @@ function trapFocus(e) {
 }
 
 function spawnDetailEffect(sourceEl) {
+  if (!shouldUseHeavyEffects()) return;
   if (!sourceEl) return;
 
   const rect = sourceEl.getBoundingClientRect();
@@ -634,6 +637,7 @@ function spawnDetailEffect(sourceEl) {
 }
 
 function spawnCloseEffect(targetEl) {
+  if (!shouldUseHeavyEffects()) return;
   const modal = document.getElementById('modal');
   const modalPanel = modal.querySelector('.modal-container');
   if (!targetEl || !modalPanel) return;
