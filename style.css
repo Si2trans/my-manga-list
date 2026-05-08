@@ -2453,3 +2453,88 @@ body.modal-open .bg-blur.visible {
     letter-spacing: 1.6px;
   }
 }
+
+@media (max-width: 740px), (hover: none), (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before,
+  body::after,
+  .scanlines,
+  .bg-blur,
+  .gateway-tunnel {
+    display: none !important;
+  }
+
+  header,
+  .control-bar,
+  .modal-overlay {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  body.gateway-ready header,
+  body.gateway-ready .control-bar,
+  body.gateway-ready .grid-section,
+  body.gateway-ready footer,
+  .manga-card,
+  .modal-tab-panel,
+  .modal-overlay.open,
+  .modal-overlay.open .modal-container,
+  .gateway-frame-shell,
+  .gateway-field,
+  .gateway-progress span {
+    animation: none !important;
+  }
+
+  .manga-card {
+    contain: layout paint style;
+    content-visibility: auto;
+    contain-intrinsic-size: 180px 280px;
+    will-change: auto !important;
+  }
+
+  .manga-card::before,
+  .manga-card::after,
+  .card-thumb::before,
+  .card-thumb::after,
+  .card-overlay {
+    display: none !important;
+  }
+
+  .manga-card:hover,
+  .manga-card.touched,
+  .manga-card:hover .card-thumb,
+  .manga-card.touched .card-thumb,
+  .manga-card:hover .card-thumb img,
+  .manga-card.touched .card-thumb img {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .card-thumb,
+  .card-thumb img,
+  .ftab,
+  .search-box,
+  .plat-btn,
+  .chapter-platform-btn,
+  .chapter-chip {
+    transition-duration: 0.12s !important;
+  }
+
+  .modal-bg-art,
+  .modal-poster-shine,
+  .morph-ghost,
+  .morph-close-ghost {
+    display: none !important;
+  }
+
+  .modal-container,
+  .chapter-console,
+  .chapter-chip,
+  .grid-count {
+    box-shadow: none !important;
+  }
+}
