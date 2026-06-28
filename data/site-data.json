@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-28T18:25:37.487Z",
+  "generatedAt": "2026-06-28T19:00:02.486Z",
   "platforms": [
     {
       "id": "mynovel",
@@ -2545,6 +2545,804 @@
         }
       ],
       "latest": "158"
+    },
+    {
+      "id": "life-game",
+      "slug": "life-game",
+      "title": "เกมต่อชีวิต : ฉันนี่แหละคือคนที่ผูกขาดข้อมูลของเหล่ามอนสเตอร์",
+      "status": "กำลังอัปเดต",
+      "cover": "images/manga06.jpg",
+      "description": "มีเพียงความแข็งแกร่งเท่านั้นถึงจะอยู่รอดในโลกใบนี้ได้!!!!!",
+      "powerLevel": "",
+      "sortOrder": 20,
+      "visible": true,
+      "sources": [
+        {
+          "platform": "readrealm",
+          "url": "https://readrealm.co/comic/aDZ1qlAOelK2x5k7gmeM",
+          "visible": true
+        },
+        {
+          "platform": "readtoon",
+          "url": "https://readtoon.com/content/8eblf2f6",
+          "visible": true
+        }
+      ],
+      "chapters": [
+        {
+          "no": 1,
+          "label": "ตอนที่ 1",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/6d7mRYPMY1Wb1M1yxe5Z"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/1"
+            }
+          ]
+        },
+        {
+          "no": 2,
+          "label": "ตอนที่ 2",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/Q2NKmWrMkoAl5MVAy7ZB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/2"
+            }
+          ]
+        },
+        {
+          "no": 3,
+          "label": "ตอนที่ 3",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/ejxyEgk3Zma2kpB08ZVX"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/3"
+            }
+          ]
+        },
+        {
+          "no": 4,
+          "label": "ตอนที่ 4",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/XDZERrV38Gv4DpoOQjN5"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/4"
+            }
+          ]
+        },
+        {
+          "no": 5,
+          "label": "ตอนที่ 5",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/XPLoAkepaKAJ8wO0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/5"
+            }
+          ]
+        },
+        {
+          "no": 6,
+          "label": "ตอนที่ 6",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/d9yzLJPM2RvRmMa7kxQq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/6"
+            }
+          ]
+        },
+        {
+          "no": 7,
+          "label": "ตอนที่ 7",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/PXDnL97wDJzJGp80dgGE"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/7"
+            }
+          ]
+        },
+        {
+          "no": 8,
+          "label": "ตอนที่ 8",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/xA7mDy63VRxRN3LeoNRd"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/8"
+            }
+          ]
+        },
+        {
+          "no": 9,
+          "label": "ตอนที่ 9",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/YxNE0lDwr5a5734a7oOB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/9"
+            }
+          ]
+        },
+        {
+          "no": 10,
+          "label": "ตอนที่ 10",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/PzyWaOXMvGBGapeLbnoA"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/10"
+            }
+          ]
+        },
+        {
+          "no": 11,
+          "label": "ตอนที่ 11",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/6a0oK5ZwzKBWLMQW2qyY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/11"
+            }
+          ]
+        },
+        {
+          "no": 12,
+          "label": "ตอนที่ 12",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/RjlzoWJpRLxD4w7GYny0"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/12"
+            }
+          ]
+        },
+        {
+          "no": 13,
+          "label": "ตอนที่ 13",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/am2X4rWpeZayN309LxE8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/13"
+            }
+          ]
+        },
+        {
+          "no": 14,
+          "label": "ตอนที่ 14",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/QGvx6EjwbZEBnw0Xz98Y"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/14"
+            }
+          ]
+        },
+        {
+          "no": 15,
+          "label": "ตอนที่ 15",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/d9yzLJPM2RvQkMa7kxQq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/15"
+            }
+          ]
+        },
+        {
+          "no": 16,
+          "label": "ตอนที่ 16",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/am2X4rWpeZaO1309LxE8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/16"
+            }
+          ]
+        },
+        {
+          "no": 17,
+          "label": "ตอนที่ 17",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/QGvx6EjwbZEOqw0Xz98Y"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/17"
+            }
+          ]
+        },
+        {
+          "no": 18,
+          "label": "ตอนที่ 18",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/d9yzLJPM2RvllMa7kxQq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/18"
+            }
+          ]
+        },
+        {
+          "no": 19,
+          "label": "ตอนที่ 19",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/PXDnL97wDJz98p80dgGE"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/19"
+            }
+          ]
+        },
+        {
+          "no": 20,
+          "label": "ตอนที่ 20",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/xA7mDy63VRx7B3LeoNRd"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/20"
+            }
+          ]
+        },
+        {
+          "no": 21,
+          "label": "ตอนที่ 21",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/gAKNWrJwqZaKdMG981z5"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/21",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 22,
+          "label": "ตอนที่ 22",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/bq5a1xlMXNaBB3ovWjXY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/22",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 23,
+          "label": "ตอนที่ 23",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/QPqxZ1awJK0OyMoYXk82"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/23",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 24,
+          "label": "ตอนที่ 24",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/XDZERrV38GLdJpoOQjN5"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/24",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 25,
+          "label": "ตอนที่ 25",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/XPLoAkepaKa8nwO0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/25",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 26,
+          "label": "ตอนที่ 26",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/6d7mRYPMY1xQbM1yxe5Z"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/26",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 27,
+          "label": "ตอนที่ 27",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/qbmY7yDMxZBNv3jzKBLl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/27",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 28,
+          "label": "ตอนที่ 28",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/Q2NKmWrMkoa7qMVAy7ZB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/28",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 29,
+          "label": "ตอนที่ 29",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/6oqPdBV30avZ6wjxnr5l"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/29",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 30,
+          "label": "ตอนที่ 30",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/PgvExZR3Wml4mM1Nn4W7"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/30",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 31,
+          "label": "ตอนที่ 31",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/ejxyEgk3ZmZ4LpB08ZVX",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/31",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 32,
+          "label": "ตอนที่ 32",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/XPLoAkepaKaQVwO0Vxj2",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/32",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 33,
+          "label": "ตอนที่ 33",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/Rlya5713KVxRDprVmWzA",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/33",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 34,
+          "label": "ตอนที่ 34",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/YxNE0lDwr5md434a7oOB",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/34",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 35,
+          "label": "ตอนที่ 35",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/QPqxZ1awJKby5MoYXk82",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/35",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 36,
+          "label": "ตอนที่ 36",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/0XbjQeJpOk6aJpRVoaZO",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/36",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 37,
+          "label": "ตอนที่ 37",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/QWXJL2yMd8dDDMvlEobg",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/37",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 38,
+          "label": "ตอนที่ 38",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/eAvjx2yMQK6x53loqKb1",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/38",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 39,
+          "label": "ตอนที่ 39",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/5LPWOoqMy7WnB3dnQZ80",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/8eblf2f6/39",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
+            }
+          ]
+        },
+        {
+          "no": 40,
+          "label": "ตอนที่ 40",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/am2X4rWpeZ97d309LxE8",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 41,
+          "label": "ตอนที่ 41",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/XPLoAkepaKYdzwO0Vxj2",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 42,
+          "label": "ตอนที่ 42",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/6a0oK5ZwzKlbrMQW2qyY",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 43,
+          "label": "ตอนที่ 43",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/RoJ8PWn34GkAmpbOeX9Z",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 44,
+          "label": "ตอนที่ 44",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/ymPRoenwEWN57pr7A5g1",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 45,
+          "label": "ตอนที่ 45",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/bq5a1xlMXNoG73ovWjXY",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 46,
+          "label": "ตอนที่ 46",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/2WPgdjNMglJojpRLZvk4",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        }
+      ],
+      "latest": "46"
     }
   ]
 }

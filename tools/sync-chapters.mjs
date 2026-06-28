@@ -228,6 +228,10 @@ async function main() {
 
       for (const source of series.sources || []) {
         if (source.visible === false) continue;
+        if (!source.url || !String(source.url).trim()) {
+          console.log(`Skip ${series.id} / ${source.platform}: missing URL`);
+          continue;
+        }
         const scrape = scrapers[source.platform];
         if (!scrape) {
           console.warn(`No scraper for platform: ${source.platform}`);
@@ -260,7 +264,9 @@ async function main() {
       .filter(series => series.visible !== false)
       .map(series => ({
         ...series,
-        sources: (series.sources || []).filter(source => source.visible !== false),
+        sources: (series.sources || []).filter(source => (
+          source.visible !== false && source.url && String(source.url).trim()
+        )),
         chapters: series.chapters || []
       }))
   };
