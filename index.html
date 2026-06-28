@@ -1,120 +1,186 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Si2Trans</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preload" href="data/site-data.json" as="fetch" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=20260629-system-redesign">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Si2Trans</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sarabun:wght@300;400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20260629-tile-source-icons">
 </head>
-<body>
-  <div class="boot" id="boot" role="status" aria-live="polite">
-    <div class="boot-window">
-      <div class="boot-titlebar">
+<body class="gateway-loading">
+
+<!-- GATEWAY INTRO -->
+<div class="gateway-intro" id="gateway-intro" aria-live="polite" aria-label="เชื่อมต่อ Si2Trans">
+  <div class="gateway-field" aria-hidden="true"></div>
+  <div class="gateway-tunnel" aria-hidden="true"></div>
+  <div class="gateway-frame-shell">
+    <div class="gateway-panel" role="status">
+      <div class="gateway-panel-top" aria-hidden="true">
         <span></span><span></span><span></span>
       </div>
-      <div class="boot-body">
-        <div class="boot-kicker">SI2TRANS SYSTEM</div>
-        <div class="boot-title">กำลังโหลดฐานข้อมูลมังงะ</div>
-        <div class="boot-meter" aria-hidden="true"><span></span></div>
-        <div class="boot-log">sync catalog / chapters / sources</div>
+      <div class="gateway-copy">
+        <div class="gateway-copy-main">เชื่อมต่อ Si2Trans</div>
+        <div class="gateway-copy-sub">กำลังไปยังหน้าหลัก.....</div>
+        <div class="gateway-progress" aria-hidden="true"><span></span></div>
       </div>
     </div>
   </div>
+</div>
 
-  <header class="app-header">
-    <div class="shell header-shell">
-      <a class="brand" href="#" aria-label="Si2Trans">
-        <span class="brand-mark">S2</span>
-        <span>
-          <span class="brand-name">SI2TRANS</span>
-          <span class="brand-sub">มังฮัวแปลไทย</span>
+<!-- DYNAMIC BACKGROUND -->
+<div class="bg-blur" id="bg-blur"></div>
+<div class="bg-dim"></div>
+<div class="scanlines"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-block logo-system" aria-label="SI2 TRANS มังฮัวแปลไทย">
+      <div class="logo-wordmark" aria-hidden="true">
+        <span class="logo-si2">
+          <span class="logo-sys-s">S</span><span class="logo-sys-i">I</span><span class="logo-sys-two">2</span>
         </span>
-      </a>
-
-      <div class="header-stats" aria-label="สรุปข้อมูล">
-        <div>
-          <b id="stat-series">0</b>
-          <span>เรื่อง</span>
-        </div>
-        <div>
-          <b id="stat-chapters">0</b>
-          <span>ตอน</span>
-        </div>
+        <span class="logo-trans">TRANS</span>
       </div>
+      <div class="logo-tagline">มังฮัวแปลไทย</div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="shell app-main">
-    <section class="toolbar" aria-label="เครื่องมือค้นหา">
-      <div class="search-wrap">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-        </svg>
-        <input id="search" type="search" autocomplete="off" placeholder="ค้นหาชื่อเรื่อง..." aria-label="ค้นหาชื่อเรื่อง">
-      </div>
+<!-- CONTROL BAR -->
+<div class="control-bar">
+  <div class="control-inner">
+    <div class="search-box" role="search">
+      <svg class="search-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 10L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <input type="text" id="search" placeholder="ค้นหามังฮัว..." aria-label="ค้นหามังฮัว">
+      <button class="search-clear" id="search-clear" style="display:none" aria-label="ล้างการค้นหา">✕</button>
+    </div>
+    <div class="filter-tabs" role="group" aria-label="กรองตามสถานะ">
+      <button class="ftab active" data-filter="all">ทั้งหมด</button>
+      <button class="ftab" data-filter="อัปเดต">อัปเดต</button>
+      <button class="ftab" data-filter="จบ">จบแล้ว</button>
+      <button class="ftab" data-filter="ใหม่">ใหม่</button>
+      <button class="ftab" data-filter="หยุด">หยุด</button>
+    </div>
+  </div>
+</div>
 
-      <div class="segmented" role="group" aria-label="ตัวกรอง">
-        <button class="segment active" type="button" data-filter="all">ทั้งหมด</button>
-        <button class="segment" type="button" data-filter="อัปเดต">อัปเดต</button>
-        <button class="segment" type="button" data-filter="จบ">จบแล้ว</button>
-        <button class="segment" type="button" data-filter="ใหม่">ใหม่</button>
-      </div>
-    </section>
-
-    <section class="catalog-head">
+<!-- MANGA GRID -->
+<main class="grid-section">
+  <div class="grid-header">
+    <div class="grid-title-line">
+      <div class="grid-title-accent"></div>
       <div>
-        <p class="eyebrow">CATALOG</p>
-        <h1>รายการมังงะ</h1>
-      </div>
-      <p id="result-count">กำลังโหลด...</p>
-    </section>
-
-    <section class="catalog" id="catalog" aria-label="รายการมังงะ">
-      <article class="skeleton-card"></article>
-      <article class="skeleton-card"></article>
-      <article class="skeleton-card"></article>
-      <article class="skeleton-card"></article>
-    </section>
-  </main>
-
-  <footer class="shell app-footer">
-    <a href="https://mynovel.co/w/Si2trans" target="_blank" rel="noopener noreferrer">MYNOVEL</a>
-    <a href="https://readrealm.co/profile/si2transs" target="_blank" rel="noopener noreferrer">ReadRealm</a>
-    <a href="https://readtoon.com/profile/si2trans" target="_blank" rel="noopener noreferrer">ReadToon</a>
-  </footer>
-
-  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title">
-    <div class="drawer-grip" aria-hidden="true"></div>
-    <button class="icon-btn drawer-close" id="drawer-close" type="button" aria-label="ปิด">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-    </button>
-    <div class="drawer-layout">
-      <div class="drawer-cover-wrap">
-        <img id="drawer-cover" alt="" loading="lazy">
-      </div>
-      <div class="drawer-content">
-        <div class="drawer-meta">
-          <span id="drawer-status"></span>
-          <span id="drawer-latest"></span>
-        </div>
-        <h2 id="drawer-title">-</h2>
-        <p id="drawer-desc"></p>
-        <div class="drawer-sources" id="drawer-sources"></div>
-        <div class="chapter-head">
-          <div>
-            <p class="eyebrow">CHAPTERS</p>
-            <h3>เลือกตอน</h3>
-          </div>
-          <button class="text-btn" id="chapter-order" type="button">ตอนล่าสุดก่อน</button>
-        </div>
-        <div class="chapter-groups" id="drawer-chapters"></div>
+        <h2 class="grid-title">All of SI2TRANS</h2>
       </div>
     </div>
-  </aside>
+    <div class="grid-count" id="grid-count">— เรื่อง</div>
+  </div>
 
-  <script src="script.js?v=20260629-system-redesign"></script>
+  <div class="manga-grid" id="skeleton-grid">
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+    <div class="skel-card"><div class="skel-thumb"></div><div class="skel-line"></div><div class="skel-line short"></div></div>
+  </div>
+
+  <div class="manga-grid" id="manga-grid" style="display:none"></div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SI2TRANS</div>
+    <p class="footer-tagline"></p>
+    <div class="footer-platforms">
+      <a href="https://mynovel.co/w/Si2trans" target="_blank" rel="noopener noreferrer" class="plat-btn plat-mynovel">
+        <img src="images/icon-mynovel.png" onerror="this.style.display='none'" alt="MyNovel"> <span>MYNOVEL</span>
+      </a>
+      <a href="https://readrealm.co/profile/si2transs" target="_blank" rel="noopener noreferrer" class="plat-btn plat-readrealm">
+        <img src="images/icon-readrealm.png" onerror="this.style.display='none'" alt="ReadRealm"> <span>ReadRealm</span>
+      </a>
+      <a href="https://readtoon.com/profile/si2trans" target="_blank" rel="noopener noreferrer" class="plat-btn plat-readtoon">
+        <img src="images/icon-readtoon.png" onerror="this.style.display='none'" alt="ReadToon"> <span>ReadToon</span>
+      </a>
+    </div>
+    <div class="footer-copy"></div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-container">
+    <div class="modal-bg-art" id="modal-bg-art" aria-hidden="true"></div>
+    <div class="modal-bg-dim" aria-hidden="true"></div>
+    <button class="modal-close-btn" id="modal-close" aria-label="ปิด">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="modal-inner">
+      <div class="modal-poster-col">
+        <div class="modal-poster-wrap">
+          <img id="modal-img" src="" alt="">
+          <div class="modal-poster-shine"></div>
+        </div>
+      </div>
+      <div class="modal-info-col">
+        <div class="modal-tags-row">
+          <span class="modal-status-tag" id="modal-status">—</span>
+          <span class="modal-chapter-tag" id="modal-chapter"></span>
+        </div>
+        <h2 class="modal-title" id="modal-title">—</h2>
+        <div class="modal-divider"></div>
+
+        <!-- TAB BAR -->
+        <div class="modal-tabs" id="modal-tabs">
+          <button class="mtab active" data-tab="detail">รายละเอียด</button>
+          <button class="mtab" data-tab="power" id="tab-power-btn">ระดับพลัง</button>
+        </div>
+
+        <!-- TAB: รายละเอียด -->
+        <div class="modal-tab-panel" id="tab-detail">
+          <p class="modal-desc" id="modal-desc">—</p>
+          <div class="modal-read-label">อ่านได้ที่</div>
+          <div class="modal-links" id="modal-links"></div>
+          <div class="chapter-console" id="chapter-console" hidden>
+            <div class="chapter-console-head">
+              <div>
+                <div class="chapter-console-kicker">CHAPTER GATE</div>
+                <div class="chapter-console-title" id="chapter-console-title">เลือกตอน</div>
+              </div>
+              <div class="chapter-console-actions">
+                <button class="chapter-order-toggle is-newest-first" id="chapter-order-toggle" type="button" aria-label="สลับไปตอนแรกสุด">
+                  <span class="chapter-order-icon" aria-hidden="true"></span>
+                  <span id="chapter-order-label">ตอนแรกสุด</span>
+                </button>
+                <a class="chapter-source-link" id="chapter-source-link" href="#" target="_blank" rel="noopener noreferrer">หน้าเรื่อง</a>
+              </div>
+            </div>
+            <div class="chapter-list" id="chapter-list"></div>
+          </div>
+        </div>
+
+        <!-- TAB: ระดับพลัง -->
+        <div class="modal-tab-panel" id="tab-power" style="display:none">
+          <div id="modal-power"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js?v=20260629-tile-source-icons"></script>
 </body>
 </html>
