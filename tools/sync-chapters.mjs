@@ -92,8 +92,10 @@ async function scrapeReadRealm(page, source) {
 
     const rows = [...document.querySelectorAll('a[href*="/comic/chapter/"]')]
       .map(anchor => {
-        const label = (anchor.querySelector('p')?.textContent || '').trim().replace(/\s+/g, ' ');
-        if (!/^\d+(?:\.\d+)?$/.test(label)) return null;
+        const labelText = (anchor.querySelector('p')?.textContent || '').trim().replace(/\s+/g, ' ');
+        const match = labelText.match(/^(\d+(?:\.\d+)?)(?:\s|$)/);
+        if (!match) return null;
+        const label = match[1].replace(/^0+(?=\d)/, '');
         const row = {
           platform,
           chapterNo: Number(label),
