@@ -26,6 +26,7 @@ function mergeSourcesByChapter(scrapedByPlatform) {
   for (const sourceRows of scrapedByPlatform) {
     for (const source of sourceRows) {
       if (!Number.isFinite(source.chapterNo)) continue;
+      if (source.chapterNo <= 0) continue;
       const key = String(source.chapterNo);
       if (!chapters.has(key)) {
         chapters.set(key, {
