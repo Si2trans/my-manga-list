@@ -80,16 +80,28 @@ async function scrapeReadRealm(page, source) {
   }
 
   return page.evaluate(platform => {
+    function readRealmCoinAccess(anchor) {
+      const coinIcon = anchor.querySelector('img[title*="ReadCoin"], img[alt*="ReadCoin"], img[src*="read-coin"]');
+      if (!coinIcon) return null;
+      const coinRow = coinIcon.closest('div');
+      const amountText = (coinRow?.textContent || '').trim().replace(/\s+/g, ' ');
+      const amount = Number((amountText.match(/\d+(?:\.\d+)?/) || [])[0]);
+      return amount > 0 ? { type: 'coin', label: 'coin', amount } : null;
+    }
+
     const rows = [...document.querySelectorAll('a[href*="/comic/chapter/"]')]
       .map(anchor => {
         const label = (anchor.querySelector('p')?.textContent || '').trim().replace(/\s+/g, ' ');
         if (!/^\d+(?:\.\d+)?$/.test(label)) return null;
-        return {
+        const row = {
           platform,
           chapterNo: Number(label),
           label,
           url: new URL(anchor.getAttribute('href'), location.origin).href
         };
+        const access = readRealmCoinAccess(anchor);
+        if (access) row.access = access;
+        return row;
       })
       .filter(Boolean);
 
