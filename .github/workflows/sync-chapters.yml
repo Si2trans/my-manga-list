@@ -1,0 +1,43 @@
+name: Sync chapters
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Why this sync was triggered
+        required: false
+        default: manual
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Sync chapters
+        run: npm run sync:chapters
+
+      - name: Validate data
+        run: npm run check:data
+
+      - name: Commit generated data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: sync chapters"
+          file_pattern: data/site-data.json

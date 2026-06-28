@@ -1,0 +1,14 @@
+{
+  "name": "si2trans-manga-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:chapters": "node tools/sync-chapters.mjs",
+    "sync:sample": "node tools/sync-chapters.mjs --sample",
+    "check:data": "node tools/check-data.mjs"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}

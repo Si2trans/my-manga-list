@@ -1,0 +1,58 @@
+{
+  "platforms": [
+    {
+      "id": "mynovel",
+      "label": "MYNOVEL",
+      "icon": "images/icon-mynovel.png",
+      "profileUrl": "https://mynovel.co/w/Si2trans",
+      "sortOrder": 10,
+      "visible": true
+    },
+    {
+      "id": "readrealm",
+      "label": "ReadRealm",
+      "icon": "images/icon-readrealm.png",
+      "profileUrl": "https://readrealm.co/profile/si2transs",
+      "sortOrder": 20,
+      "visible": true
+    },
+    {
+      "id": "readtoon",
+      "label": "ReadToon",
+      "icon": "images/icon-readtoon.png",
+      "profileUrl": "https://readtoon.com/profile/si2trans",
+      "sortOrder": 30,
+      "visible": true
+    }
+  ],
+  "series": [
+    {
+      "id": "ancient-divine-body",
+      "slug": "ancient-divine-body",
+      "title": "กำเนิดร่างเทวะบรรพกาล",
+      "status": "กำลังอัปเดต",
+      "cover": "images/manga01.jpg",
+      "description": "จวินเซียวเหยาเดินทางข้ามโลกแฟนตาซีและได้รับร่างเทวะบรรพกาล เขามีภูมิหลังที่ทรงพลังและมีพรสวรรค์ที่น่าทึ่ง",
+      "powerLevel": "",
+      "sortOrder": 10,
+      "visible": true,
+      "sources": [
+        {
+          "platform": "mynovel",
+          "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32",
+          "visible": true
+        },
+        {
+          "platform": "readrealm",
+          "url": "https://readrealm.co/comic/WrwEvg7LY8LNY20blNPp",
+          "visible": true
+        },
+        {
+          "platform": "readtoon",
+          "url": "https://readtoon.com/content/yos5hbxs",
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
