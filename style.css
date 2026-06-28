@@ -95,14 +95,41 @@
 }
 
 .chapter-inline-sources {
-  padding: 8px;
+  min-height: 38px;
+  padding: 0;
   border: 1px solid rgba(95, 220, 255, 0.18);
-  border-radius: 6px;
+  border-radius: 4px;
   background: rgba(2, 14, 25, 0.72);
 }
 
 .chapter-inline-sources[hidden] {
   display: none;
+}
+
+.chapter-entry.is-selected .chapter-chip {
+  display: none;
+}
+
+.chapter-source-choices {
+  grid-template-columns: repeat(auto-fit, minmax(42px, 1fr));
+  gap: 6px;
+  height: 100%;
+  padding: 5px;
+}
+
+.chapter-source-choices .source-choice {
+  min-height: 28px;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+
+.chapter-source-choices .source-choice span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .chapter-source-count,
@@ -2162,6 +2189,9 @@ body.modal-open .bg-blur.visible {
 }
 
 .chapter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -440,6 +440,12 @@ function sourceCoinIcon(source) {
   return source.access?.type === 'coin' ? '<span class="chapter-source-coin" title="ติดเหรียญ">◉</span>' : '';
 }
 
+function chapterCoinIcon(chapter) {
+  return chapter.sources.some(source => source.access?.type === 'coin')
+    ? '<span class="chapter-source-coin" title="ติดเหรียญ">◉</span>'
+    : '';
+}
+
 function createPlatformButton(source, compact = false) {
   const platform = platformById(source.platform) || { id: source.platform, label: source.platform, icon: '' };
   const a = document.createElement('a');
@@ -448,23 +454,24 @@ function createPlatformButton(source, compact = false) {
   a.target = '_blank';
   a.rel = 'noopener noreferrer';
   a.dataset.platform = platform.id;
+  a.title = platform.label;
+  a.setAttribute('aria-label', platform.label);
 
   const icon = platform.icon ? `<img src="${esc(platform.icon)}" alt="" onerror="this.style.display='none'">` : '';
   a.innerHTML = `
     ${icon}
     <span>${esc(platform.label)}</span>
-    ${sourceCoinIcon(source)}
   `;
   return a;
 }
 
 function createSourceChoiceList(chapter) {
   const choices = document.createElement('div');
-  choices.className = 'source-choice-list';
+  choices.className = 'source-choice-list chapter-source-choices';
   chapter.sources
     .slice()
     .sort((a, b) => (platformById(a.platform)?.sortOrder || 0) - (platformById(b.platform)?.sortOrder || 0))
-    .forEach(source => choices.appendChild(createPlatformButton(source)));
+    .forEach(source => choices.appendChild(createPlatformButton(source, true)));
 
   return choices;
 }
@@ -498,7 +505,7 @@ function createChapterChip(chapter) {
 
   const label = document.createElement('span');
   label.className = 'chapter-label';
-  label.textContent = chapter.label || `ตอนที่ ${chapter.no}`;
+  label.innerHTML = `${esc(chapter.label || `ตอนที่ ${chapter.no}`)}${chapterCoinIcon(chapter)}`;
   button.appendChild(label);
 
   const picker = document.createElement('div');
