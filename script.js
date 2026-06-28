@@ -458,15 +458,7 @@ function createPlatformButton(source, compact = false) {
   return a;
 }
 
-function renderSourcePicker(chapter) {
-  const linksEl = document.getElementById('modal-links');
-  linksEl.innerHTML = '';
-
-  const title = document.createElement('div');
-  title.className = 'source-picker-title';
-  title.textContent = `${chapter.label || `ตอนที่ ${chapter.no}`} / เลือกเว็บ`;
-  linksEl.appendChild(title);
-
+function createSourceChoiceList(chapter) {
   const choices = document.createElement('div');
   choices.className = 'source-choice-list';
   chapter.sources
@@ -474,23 +466,31 @@ function renderSourcePicker(chapter) {
     .sort((a, b) => (platformById(a.platform)?.sortOrder || 0) - (platformById(b.platform)?.sortOrder || 0))
     .forEach(source => choices.appendChild(createPlatformButton(source)));
 
-  linksEl.appendChild(choices);
+  return choices;
 }
 
-function selectChapter(chapter) {
+function selectChapter(chapter, entryEl) {
   selectedChapter = chapter;
   document.querySelectorAll('.chapter-chip').forEach(button => {
     button.classList.toggle('active', Number(button.dataset.chapterNo) === Number(chapter.no));
   });
+  document.querySelectorAll('.chapter-entry').forEach(entry => {
+    const isActive = entry === entryEl;
+    entry.classList.toggle('is-selected', isActive);
+    const picker = entry.querySelector('.chapter-inline-sources');
+    if (picker) picker.hidden = !isActive;
+  });
 
-  if (chapter.sources.length === 1) {
-    renderSourcePicker(chapter);
-    return;
-  }
-  renderSourcePicker(chapter);
+  const picker = entryEl.querySelector('.chapter-inline-sources');
+  if (!picker) return;
+  picker.innerHTML = '';
+  picker.appendChild(createSourceChoiceList(chapter));
 }
 
 function createChapterChip(chapter) {
+  const entry = document.createElement('div');
+  entry.className = 'chapter-entry';
+
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'chapter-chip';
@@ -501,14 +501,14 @@ function createChapterChip(chapter) {
   label.textContent = chapter.label || `ตอนที่ ${chapter.no}`;
   button.appendChild(label);
 
-  const meta = document.createElement('span');
-  meta.className = 'chapter-source-count';
-  const hasCoin = chapter.sources.some(source => source.access?.type === 'coin');
-  meta.textContent = hasCoin ? `◉ ${chapter.sources.length}` : String(chapter.sources.length);
-  button.appendChild(meta);
+  const picker = document.createElement('div');
+  picker.className = 'chapter-inline-sources';
+  picker.hidden = true;
 
-  button.onclick = () => selectChapter(chapter);
-  return button;
+  button.onclick = () => selectChapter(chapter, entry);
+  entry.appendChild(button);
+  entry.appendChild(picker);
+  return entry;
 }
 
 function renderChapterGroups(chapters, listEl, newestFirst = false) {
@@ -570,12 +570,16 @@ function renderChapterPanel(manga) {
 
   selectedChapter = null;
   listEl.innerHTML = '';
-  linksEl.innerHTML = '<div class="source-picker-empty">เลือกตอนเพื่อดูเว็บที่อ่านได้</div>';
+  linksEl.innerHTML = '';
+  linksEl.hidden = true;
+  if (linksEl.previousElementSibling) linksEl.previousElementSibling.hidden = true;
   listEl.classList.remove('chapter-list-grouped');
 
   if (!manga.chapters.length) {
     consoleEl.hidden = true;
     linksEl.innerHTML = '<div class="source-picker-empty">ยังไม่มีลิงก์ตอนของเรื่องนี้</div>';
+    linksEl.hidden = false;
+    if (linksEl.previousElementSibling) linksEl.previousElementSibling.hidden = false;
     return;
   }
 

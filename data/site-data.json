@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-28T17:47:48.081Z",
+  "generatedAt": "2026-06-28T18:06:55.908Z",
   "platforms": [
     {
       "id": "mynovel",
@@ -63,6 +63,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/LvnPGjqM56j6pgK9doxa"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/1"
             }
           ]
         },
@@ -73,6 +77,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/gAKNWrJwqoDdpG981z52"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/2"
             }
           ]
         },
@@ -83,6 +91,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/bq5a1xlMXJZB3ovWjXYO"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/3"
             }
           ]
         },
@@ -93,6 +105,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMybYVpdnQZ809"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/4"
             }
           ]
         },
@@ -103,6 +119,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qb2Px0gpLo9NMZJzjRym"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/5"
             }
           ]
         },
@@ -113,6 +133,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/LvnPGjqM56jypgK9doxa"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/6"
             }
           ]
         },
@@ -123,6 +147,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QWXJL2yMdnqV3vlEobgN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/7"
             }
           ]
         },
@@ -133,6 +161,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ly01n6dpPkmaMzJ7BaAR"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/8"
             }
           ]
         },
@@ -143,6 +175,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Rlya5713K8DXwrVmWzAN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/9"
             }
           ]
         },
@@ -153,6 +189,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/9rd85a6pGlRz3x4BGEqP"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/10"
             }
           ]
         },
@@ -163,6 +203,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/am2X4rWpeyQmp09LxE81"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/11"
             }
           ]
         },
@@ -173,6 +217,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QGvx6EjwbBdJw0Xz98Yy"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/12"
             }
           ]
         },
@@ -183,6 +231,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PzyWaOXMvbmzMeLbnoA9"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/13"
             }
           ]
         },
@@ -193,6 +245,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qbmY7yDMxA4vpjzKBLlX"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/14"
             }
           ]
         },
@@ -203,6 +259,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BNROa82wBZAlw67J9QYG"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/15"
             }
           ]
         },
@@ -213,6 +273,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XDZERrV38oEqpoOQjN5x"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/16"
             }
           ]
         },
@@ -223,6 +287,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/amA9B8Zwldgdw0bqW46o"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/17"
             }
           ]
         },
@@ -233,6 +301,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaXngMO0Vxj2Z"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/18"
             }
           ]
         },
@@ -243,6 +315,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BGr6m9b3AxA6plKWyQ8D"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/19"
             }
           ]
         },
@@ -253,6 +329,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ymPRoenwERAPMr7A5g1X"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/20"
             }
           ]
         },
@@ -263,6 +343,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/1PrlObQp6AEOMRve8a0x"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/21"
             }
           ]
         },
@@ -273,6 +357,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Y6qk2AVp9GAPwXGZRKWe"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/22"
             }
           ]
         },
@@ -283,6 +371,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Yz98JGlwjdQ0pEZXPn1Q"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/23"
             }
           ]
         },
@@ -293,6 +385,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMybvVpdnQZ809"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/24"
             }
           ]
         },
@@ -303,6 +399,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/vm48y7op1YEOpbZnA6BL"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/25"
             }
           ]
         },
@@ -313,6 +413,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/VDONZd6MNQAowmkLe4Pq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/26"
             }
           ]
         },
@@ -323,6 +427,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/LvnPGjqM56EypgK9doxa"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/27"
             }
           ]
         },
@@ -333,6 +441,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ly01n6dpPkAaMzJ7BaAR"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/28"
             }
           ]
         },
@@ -343,6 +455,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/gAKNWrJwqoGApG981z52"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/29"
             }
           ]
         },
@@ -353,6 +469,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/eAvjx2yMQmAxMloqKb16"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/30"
             }
           ]
         },
@@ -363,6 +483,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/bq5a1xlMXJAX3ovWjXYO"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/31"
             }
           ]
         },
@@ -373,6 +497,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/2WPgdjNMgLdQpRLZvk4l"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/32"
             }
           ]
         },
@@ -383,6 +511,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/rNgv8dzwoDoJMxbjyZ9e"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/33"
             }
           ]
         },
@@ -393,6 +525,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/6a0oK5ZwzW7EMQW2qyYX"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/34"
             }
           ]
         },
@@ -403,6 +539,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/9rd85a6pGlAz3x4BGEqP"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/35"
             }
           ]
         },
@@ -413,6 +553,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RjlzoWJpRDAyw7GYny0x"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/36"
             }
           ]
         },
@@ -423,6 +567,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/am2X4rWpeyNmp09LxE81"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/37"
             }
           ]
         },
@@ -433,6 +581,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QGvx6EjwbByJw0Xz98Yy"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/38"
             }
           ]
         },
@@ -443,6 +595,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PXDnL97wDZAgp80dgGEl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/39"
             }
           ]
         },
@@ -453,6 +609,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/xA7mDy63VPAEMLeoNRdr"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/40"
             }
           ]
         },
@@ -463,6 +623,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PzyWaOXMvbDzMeLbnoA9"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/41"
             }
           ]
         },
@@ -473,6 +637,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qb2Px0gpLodeMZJzjRym"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/42"
             }
           ]
         },
@@ -483,6 +651,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/LvnPGjqM5g2N3gK9doxa"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/43"
             }
           ]
         },
@@ -493,6 +665,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PXDnL97wDkgG380dgGEl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/44"
             }
           ]
         },
@@ -503,6 +679,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/amA9B8ZwlQrvM0bqW46o"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/45"
             }
           ]
         },
@@ -513,6 +693,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/v4NeVKypm9vJplWJAO60"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/46"
             }
           ]
         },
@@ -523,6 +707,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Rlya5713KjmVprVmWzAN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/47"
             }
           ]
         },
@@ -533,6 +721,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Yz98JGlwjROEwEZXPn1Q"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/48"
             }
           ]
         },
@@ -543,6 +735,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PXDnL97wDPmGw80dgGEl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/49"
             }
           ]
         },
@@ -553,6 +749,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/147nN0BMnZqxMYJxjDv2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/50"
             }
           ]
         },
@@ -563,6 +763,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/rNgv8dzwozWo3xbjyZ9e"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/51"
             }
           ]
         },
@@ -573,6 +777,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/vm48y7op1rag3bZnA6BL"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/52"
             }
           ]
         },
@@ -583,6 +791,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMyVO7pdnQZ809"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/53"
             }
           ]
         },
@@ -593,6 +805,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Rlya5713KqmxMrVmWzAN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/54"
             }
           ]
         },
@@ -603,6 +819,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RoJ8PWn34VqrMbOeX9ZN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/55"
             }
           ]
         },
@@ -613,6 +833,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/2WPgdjNMgjO5wRLZvk4l"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/56"
             }
           ]
         },
@@ -623,6 +847,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RjlzoWJpRamyM7GYny0x"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/57"
             }
           ]
         },
@@ -633,6 +861,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PXDnL97wDGvz380dgGEl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/58"
             }
           ]
         },
@@ -643,6 +875,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/6oqPdBV30AgNwjxnr5lm"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/59"
             }
           ]
         },
@@ -653,6 +889,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PzyWaOXMvZgaMeLbnoA9"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/60"
             }
           ]
         },
@@ -663,6 +903,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaA0epO0Vxj2Z"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/61"
             }
           ]
         },
@@ -673,6 +917,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PzyWaOXMvBkYMeLbnoA9"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/62"
             }
           ]
         },
@@ -683,6 +931,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PXDnL97wDzYzp80dgGEl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/63"
             }
           ]
         },
@@ -693,6 +945,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XDZERrV38yOYwoOQjN5x"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/64"
             }
           ]
         },
@@ -703,6 +959,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/xA7mDy63V6jB3LeoNRdr"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/65"
             }
           ]
         },
@@ -713,6 +973,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/v4NeVKypmWKPwlWJAO60"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/66"
             }
           ]
         },
@@ -723,6 +987,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/bq5a1xlMXz7L3ovWjXYO"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/67"
             }
           ]
         },
@@ -733,6 +1001,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/2WPgdjNMgEjo3RLZvk4l"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/68"
             }
           ]
         },
@@ -743,6 +1015,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QWXJL2yMdzNm3vlEobgN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/69"
             }
           ]
         },
@@ -753,6 +1029,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/am2X4rWpe24r309LxE81"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/70"
             }
           ]
         },
@@ -763,6 +1043,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PgvExZR3WOaj31Nn4W7B"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/71"
             }
           ]
         },
@@ -773,6 +1057,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/rNgv8dzwo8E5MxbjyZ9e"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/72"
             }
           ]
         },
@@ -783,6 +1071,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/147nN0BMnnAnMYJxjDv2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/73"
             }
           ]
         },
@@ -793,6 +1085,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/YxNE0lDwrrgXw4a7oOB1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/74"
             }
           ]
         },
@@ -803,6 +1099,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BNROa82wBb57w67J9QYG"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/75"
             }
           ]
         },
@@ -813,6 +1113,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/am2X4rWpeB16309LxE81"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/76"
             }
           ]
         },
@@ -823,6 +1127,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMyvAbpdnQZ809"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/77"
             }
           ]
         },
@@ -833,6 +1141,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Rlya5713KzvrprVmWzAN"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/78"
             }
           ]
         },
@@ -843,6 +1155,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/rNgv8dzwoXnVMxbjyZ9e"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/79"
             }
           ]
         },
@@ -853,6 +1169,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qb2Px0gpLdAapZJzjRym"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/80"
             }
           ]
         },
@@ -863,6 +1183,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/v4NeVKypm1oOplWJAO60"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/81"
             }
           ]
         },
@@ -873,6 +1197,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Yz98JGlwjBBd1wEZXPn1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/82"
             }
           ]
         },
@@ -883,6 +1211,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ymPRoenwEkW5Lpr7A5g1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/83"
             }
           ]
         },
@@ -893,6 +1225,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMyKGEB3dnQZ80"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/84"
             }
           ]
         },
@@ -903,6 +1239,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BNROa82wBRlalw67J9QY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/85"
             }
           ]
         },
@@ -913,6 +1253,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QWXJL2yMdenn7pvlEobg"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/86"
             }
           ]
         },
@@ -923,6 +1267,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/vm48y7op1GPxPwbZnA6B"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/87"
             }
           ]
         },
@@ -933,6 +1281,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RjlzoWJpRJoeyp7GYny0"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/88"
             }
           ]
         },
@@ -943,6 +1295,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/PgvExZR3WLg29w1Nn4W7"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/89"
             }
           ]
         },
@@ -953,6 +1309,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QWXJL2yMdeNkypvlEobg"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/90"
             }
           ]
         },
@@ -963,6 +1323,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/YxNE0lDwrZeq2w4a7oOB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/91"
             }
           ]
         },
@@ -973,6 +1337,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BNROa82wBRY46w67J9QY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/92"
             }
           ]
         },
@@ -983,6 +1351,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/d9yzLJPM2Wyodpa7kxQq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/93"
             }
           ]
         },
@@ -993,6 +1365,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/LvnPGjqM55R5jMgK9dox"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/94"
             }
           ]
         },
@@ -1003,6 +1379,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/6oqPdBV306qdKMjxnr5l"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/95"
             }
           ]
         },
@@ -1013,6 +1393,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Y6qk2AVp9Qm6RpXGZRKW"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/96"
             }
           ]
         },
@@ -1023,6 +1407,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaZQVD3O0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/97"
             }
           ]
         },
@@ -1033,6 +1421,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/vm48y7op1Ga5BwbZnA6B"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/98"
             }
           ]
         },
@@ -1043,6 +1435,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/rNgv8dzwok7XgwxbjyZ9"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/99"
             }
           ]
         },
@@ -1053,6 +1449,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5b08P9V37Y1YoMOBKY6X"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/100"
             }
           ]
         },
@@ -1063,6 +1463,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RjlzoWJpRJ6Xdp7GYny0"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/101"
             }
           ]
         },
@@ -1073,6 +1477,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RoJ8PWn34NDx6MbOeX9Z"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/102"
             }
           ]
         },
@@ -1083,6 +1491,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ejxyEgk3ZrWaE3B08ZVX"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/103"
             }
           ]
         },
@@ -1093,6 +1505,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/0XbjQeJpO85NK3RVoaZO"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/104"
             }
           ]
         },
@@ -1103,6 +1519,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BGr6m9b3AZ2kmwlKWyQ8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/105"
             }
           ]
         },
@@ -1113,6 +1533,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/am2X4rWpegG66w09LxE8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/106"
             }
           ]
         },
@@ -1123,6 +1547,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5b08P9V37YN0eMOBKY6X"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/107"
             }
           ]
         },
@@ -1133,6 +1561,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RjlzoWJpRJP6Dp7GYny0"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/108"
             }
           ]
         },
@@ -1147,6 +1579,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/am2X4rWpegx21w09LxE8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/109"
             }
           ]
         },
@@ -1161,6 +1597,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Q2NKmWrMkgx4KMVAy7ZB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/110"
             }
           ]
         },
@@ -1175,6 +1615,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Yz98JGlwjBzOOwEZXPn1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/111"
             }
           ]
         },
@@ -1189,6 +1633,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/147nN0BMnXzo43YJxjDv"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/112"
             }
           ]
         },
@@ -1203,6 +1651,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ejxyEgk3Zr9gO3B08ZVX"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/113"
             }
           ]
         },
@@ -1217,6 +1669,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/bq5a1xlMXDVDAMovWjXY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/114"
             }
           ]
         },
@@ -1231,6 +1687,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/VDONZd6MNjOqeMmkLe4P"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/115"
             }
           ]
         },
@@ -1245,6 +1705,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/YxNE0lDwrZV12w4a7oOB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/116"
             }
           ]
         },
@@ -1259,6 +1723,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ejxyEgk3ZrAzG3B08ZVX"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/117"
             }
           ]
         },
@@ -1273,6 +1741,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Y6qk2AVp9Qjn1pXGZRKW"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/118"
             }
           ]
         },
@@ -1287,6 +1759,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Q2NKmWrMkgda5MVAy7ZB"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/119"
             }
           ]
         },
@@ -1301,6 +1777,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaZJE93O0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/120"
             }
           ]
         },
@@ -1315,6 +1795,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaZDZg3O0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/121"
             }
           ]
         },
@@ -1329,6 +1813,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/LvnPGjqM55b4xMgK9dox"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/122"
             }
           ]
         },
@@ -1343,6 +1831,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/RoJ8PWn34G4P7pbOeX9Z"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/123"
             }
           ]
         },
@@ -1357,6 +1849,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QWXJL2yMd8eb9MvlEobg"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/124"
             }
           ]
         },
@@ -1371,6 +1867,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BGr6m9b3AVV8rwlKWyQ8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/125"
             }
           ]
         },
@@ -1385,6 +1885,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XDZERrV38GGE6poOQjN5"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/126"
             }
           ]
         },
@@ -1399,6 +1903,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Y6qk2AVp9l7mBMXGZRKW"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/127"
             }
           ]
         },
@@ -1413,6 +1921,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/1PrlObQp6Kl1n3Rve8a0"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/128"
             }
           ]
         },
@@ -1427,6 +1939,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/eAvjx2yMQKBOx3loqKb1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/129"
             }
           ]
         },
@@ -1441,6 +1957,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/eAvjx2yMQKmKJ3loqKb1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/130"
             }
           ]
         },
@@ -1455,6 +1975,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/QWXJL2yMd8nZLMvlEobg"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/131"
             }
           ]
         },
@@ -1469,6 +1993,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMy7RNY3dnQZ80"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/132"
             }
           ]
         },
@@ -1483,6 +2011,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/d9yzLJPM2R291Ma7kxQq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/133"
             }
           ]
         },
@@ -1497,6 +2029,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qb2Px0gpLRkRqwZJzjRy"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/134"
             }
           ]
         },
@@ -1511,6 +2047,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/VDONZd6MNYByGwmkLe4P"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/135"
             }
           ]
         },
@@ -1525,6 +2065,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/gAKNWrJwqZR8rMG981z5"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/136"
             }
           ]
         },
@@ -1539,6 +2083,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/bq5a1xlMXNBBO3ovWjXY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/137"
             }
           ]
         },
@@ -1553,6 +2101,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/9rd85a6pG19yZwx4BGEq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/138"
             }
           ]
         },
@@ -1567,6 +2119,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BGr6m9b3AVzlewlKWyQ8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/139"
             }
           ]
         },
@@ -1581,6 +2137,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaK6OrwO0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/140"
             }
           ]
         },
@@ -1595,6 +2155,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/BGr6m9b3AVRy2wlKWyQ8"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/141"
             }
           ]
         },
@@ -1609,6 +2173,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/147nN0BMnqd57wYJxjDv"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/142"
             }
           ]
         },
@@ -1623,6 +2191,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qb2Px0gpLROW6wZJzjRy"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/143"
             }
           ]
         },
@@ -1637,6 +2209,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qbmY7yDMxZ58v3jzKBLl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/144"
             }
           ]
         },
@@ -1651,6 +2227,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/XPLoAkepaKQxzwO0Vxj2"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/145"
             }
           ]
         },
@@ -1665,6 +2245,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/d9yzLJPM2RxqDMa7kxQq"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/146"
             }
           ]
         },
@@ -1679,6 +2263,10 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Yz98JGlwjNVzqwEZXPn1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/147"
             }
           ]
         },
@@ -1693,6 +2281,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qbmY7yDMxZa6J3jzKBLl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/148",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1707,6 +2303,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/Yz98JGlwjN2QqwEZXPn1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/149",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1721,6 +2325,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ly01n6dpPe06P3zJ7BaA"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/150",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1735,6 +2347,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/bq5a1xlMXNa7E3ovWjXY"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/151",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1749,6 +2369,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/ymPRoenwEWo67pr7A5g1"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/152",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1763,6 +2391,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMy7ZxO3dnQZ80"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/153",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1777,6 +2413,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/5LPWOoqMy7LdB3dnQZ80"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/154",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },
@@ -1791,6 +2435,14 @@
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/qbmY7yDMxZxjn3jzKBLl"
+            },
+            {
+              "platform": "readtoon",
+              "url": "https://readtoon.com/content/yos5hbxs/155",
+              "access": {
+                "type": "coin",
+                "label": "coin"
+              }
             }
           ]
         },

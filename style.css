@@ -88,6 +88,23 @@
   box-shadow: 0 0 0 1px rgba(125, 237, 255, 0.18), 0 0 18px rgba(0, 177, 255, 0.18);
 }
 
+.chapter-entry {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.chapter-inline-sources {
+  padding: 8px;
+  border: 1px solid rgba(95, 220, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(2, 14, 25, 0.72);
+}
+
+.chapter-inline-sources[hidden] {
+  display: none;
+}
+
 .chapter-source-count,
 .chapter-source-coin {
   display: inline-flex;
@@ -2110,7 +2127,7 @@ body.modal-open .bg-blur.visible {
 
 .chapter-chip {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 8px;
   min-height: 38px;
