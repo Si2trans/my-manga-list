@@ -304,19 +304,41 @@ function update() {
 function buildPowerLevel(raw) {
   if (!raw) return '';
 
-  const levels = String(raw).split('|').map(level => level.trim()).filter(Boolean);
-  if (!levels.length) return '';
+  const segments = String(raw).split('|').map(level => level.trim()).filter(Boolean);
+  if (!segments.length) return '';
+
+  let currentPower = null;
+  let levels = segments;
+  const currentMarkerIndex = segments[0].indexOf('>>');
+
+  if (currentMarkerIndex > -1) {
+    currentPower = {
+      label: segments[0].slice(0, currentMarkerIndex).trim(),
+      value: segments[0].slice(currentMarkerIndex + 2).trim()
+    };
+    levels = segments.slice(1);
+  }
+
+  if (!levels.length && !currentPower) return '';
 
   return `
     <div class="power-section">
-      <div class="power-list">
-        ${levels.map((level, index) => `
+      ${currentPower ? `
+        <div class="power-current-card">
+          <span class="power-current-label">${esc(currentPower.label || 'ระดับพลังปัจจุบัน')}</span>
+          <span class="power-current-value">${esc(currentPower.value || '-')}</span>
+        </div>
+      ` : ''}
+      ${levels.length ? `
+        <div class="power-list">
+          ${levels.map((level, index) => `
           <div class="power-item">
-            <span class="power-num">${index + 1}</span>
+            <span class="power-num">${String(index + 1).padStart(2, '0')}</span>
             <span class="power-name">${esc(level)}</span>
           </div>
-        `).join('')}
-      </div>
+          `).join('')}
+        </div>
+      ` : ''}
     </div>`;
 }
 
@@ -465,6 +487,19 @@ function createPlatformButton(source, compact = false) {
   return a;
 }
 
+function getSeriesSources(manga) {
+  return (Array.isArray(manga.sources) ? manga.sources : [])
+    .filter(source => source.visible !== false && safeUrl(source.url) !== '#')
+    .sort((a, b) => (platformById(a.platform)?.sortOrder || 0) - (platformById(b.platform)?.sortOrder || 0));
+}
+
+function createSeriesSourceChoiceList(sources) {
+  const choices = document.createElement('div');
+  choices.className = 'source-choice-list series-source-choices';
+  sources.forEach(source => choices.appendChild(createPlatformButton(source)));
+  return choices;
+}
+
 function createSourceChoiceList(chapter) {
   const choices = document.createElement('div');
   choices.className = 'source-choice-list chapter-source-choices';
@@ -574,6 +609,7 @@ function renderChapterPanel(manga) {
   const orderButton = document.getElementById('chapter-order-toggle');
   const listEl = document.getElementById('chapter-list');
   const linksEl = document.getElementById('modal-links');
+  const seriesSources = getSeriesSources(manga);
 
   selectedChapter = null;
   listEl.innerHTML = '';
@@ -592,8 +628,21 @@ function renderChapterPanel(manga) {
 
   consoleEl.hidden = false;
   titleEl.textContent = 'เลือกตอน';
-  sourceLink.href = manga.sources?.[0]?.url ? safeUrl(manga.sources[0].url) : '#';
+  sourceLink.href = seriesSources[0]?.url ? safeUrl(seriesSources[0].url) : '#';
   sourceLink.textContent = 'หน้าเรื่อง';
+  sourceLink.setAttribute('aria-expanded', 'false');
+  sourceLink.classList.toggle('has-source-picker', seriesSources.length > 1);
+  sourceLink.onclick = event => {
+    if (seriesSources.length <= 1) return;
+
+    event.preventDefault();
+    const willOpen = linksEl.hidden;
+    linksEl.innerHTML = '';
+    if (willOpen) linksEl.appendChild(createSeriesSourceChoiceList(seriesSources));
+    linksEl.hidden = !willOpen;
+    if (linksEl.previousElementSibling) linksEl.previousElementSibling.hidden = !willOpen;
+    sourceLink.setAttribute('aria-expanded', String(willOpen));
+  };
 
   if (orderButton) {
     orderButton.hidden = !manga.chapters.length;
