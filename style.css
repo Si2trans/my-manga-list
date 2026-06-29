@@ -735,17 +735,39 @@ footer {
 .modal-tab-panel { animation: fadeIn 0.18s ease; }
 
 /* ── Power Multi-Category ─────────────────────────────────────── */
-.power-multi { display: flex; flex-direction: column; gap: 16px; }
-.power-category { display: flex; flex-direction: column; gap: 6px; }
-.power-cat-header {
-  font-family: var(--ff-head); font-size: 10px;
-  letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--gold, #c9a84c);
-  padding: 0 4px 4px;
-  border-bottom: 1px solid rgba(201,168,76,0.2);
-  margin-bottom: 2px;
+.power-multi,
+.power-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.power-multi .power-list { max-height: none; overflow: visible; }
+
+.power-category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.power-cat-header {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 28px;
+  padding: 3px 10px;
+  border: 1px solid rgba(86, 255, 207, 0.3);
+  border-radius: 999px;
+  background: rgba(6, 214, 160, 0.08);
+  color: #dffcff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.power-multi .power-list,
+.power-categories .power-list {
+  max-height: none;
+  overflow: visible;
+}
 
 /* ── Power Group ─────────────────────────────────────────────── */
 .power-group { display: flex; flex-direction: column; gap: 12px; }

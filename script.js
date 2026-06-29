@@ -320,6 +320,10 @@ function buildPowerLevel(raw) {
   }
 
   if (!levels.length && !currentPower) return '';
+  const currentCategory = currentPower?.value.includes(':')
+    ? currentPower.value.split(':')[0].trim()
+    : '';
+  const levelGroups = buildPowerLevelGroups(levels, currentCategory);
 
   return `
     <div class="power-section">
@@ -329,17 +333,69 @@ function buildPowerLevel(raw) {
           <span class="power-current-value">${esc(currentPower.value || '-')}</span>
         </div>
       ` : ''}
-      ${levels.length ? `
-        <div class="power-list">
-          ${levels.map((level, index) => `
-          <div class="power-item">
-            <span class="power-num">${String(index + 1).padStart(2, '0')}</span>
-            <span class="power-name">${esc(level)}</span>
-          </div>
-          `).join('')}
-        </div>
-      ` : ''}
+      ${renderPowerLevelGroups(levelGroups)}
     </div>`;
+}
+
+function buildPowerLevelGroups(levels, initialCategory = '') {
+  const groups = [];
+  let currentGroup = { name: initialCategory, levels: [] };
+
+  const pushCurrentGroup = () => {
+    if (currentGroup.name || currentGroup.levels.length) groups.push(currentGroup);
+  };
+
+  levels.flatMap(level => String(level).split(';').map(part => part.trim()).filter(Boolean))
+    .forEach(level => {
+      const categoryIndex = level.indexOf(':');
+      if (categoryIndex > -1) {
+        pushCurrentGroup();
+        currentGroup = {
+          name: level.slice(0, categoryIndex).trim(),
+          levels: []
+        };
+        const firstLevel = level.slice(categoryIndex + 1).trim();
+        if (firstLevel) currentGroup.levels.push(firstLevel);
+        return;
+      }
+
+      currentGroup.levels.push(level);
+    });
+
+  pushCurrentGroup();
+  return groups.filter(group => group.levels.length);
+}
+
+function renderPowerList(levels) {
+  if (!levels.length) return '';
+  return `
+    <div class="power-list">
+      ${levels.map((level, index) => `
+      <div class="power-item">
+        <span class="power-num">${String(index + 1).padStart(2, '0')}</span>
+        <span class="power-name">${esc(level)}</span>
+      </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderPowerLevelGroups(groups) {
+  if (!groups.length) return '';
+
+  const shouldGroup = groups.length > 1 || groups.some(group => group.name);
+  if (!shouldGroup) return renderPowerList(groups[0].levels);
+
+  return `
+    <div class="power-categories">
+      ${groups.map(group => `
+        <section class="power-category">
+          ${group.name ? `<div class="power-cat-header">${esc(group.name)}</div>` : ''}
+          ${renderPowerList(group.levels)}
+        </section>
+      `).join('')}
+    </div>
+  `;
 }
 
 function switchModalTab(tabName) {
