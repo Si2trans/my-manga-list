@@ -312,17 +312,18 @@ function buildPowerLevel(raw) {
   const currentMarkerIndex = segments[0].indexOf('>>');
 
   if (currentMarkerIndex > -1) {
+    const rawCurrentValue = segments[0].slice(currentMarkerIndex + 2).trim();
+    const currentCategoryIndex = rawCurrentValue.indexOf(':');
     currentPower = {
       label: segments[0].slice(0, currentMarkerIndex).trim(),
-      value: segments[0].slice(currentMarkerIndex + 2).trim()
+      category: currentCategoryIndex > -1 ? rawCurrentValue.slice(0, currentCategoryIndex).trim() : '',
+      value: currentCategoryIndex > -1 ? rawCurrentValue.slice(currentCategoryIndex + 1).trim() : rawCurrentValue
     };
     levels = segments.slice(1);
   }
 
   if (!levels.length && !currentPower) return '';
-  const currentCategory = currentPower?.value.includes(':')
-    ? currentPower.value.split(':')[0].trim()
-    : '';
+  const currentCategory = currentPower?.category || '';
   const levelGroups = buildPowerLevelGroups(levels, currentCategory);
 
   return `
