@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-13T16:49:34.060Z",
+  "generatedAt": "2026-08-24T16:31:44.609Z",
   "platforms": [
     {
       "id": "mynovel",
@@ -1201,10 +1201,6 @@
           "label": "ตอนที่ 115",
           "sources": [
             {
-              "platform": "mynovel",
-              "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/PM01zd5l7aAeL7bH5DByyAzO"
-            },
-            {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/VDONZd6MNjOqeMmkLe4P"
             }
@@ -1214,10 +1210,6 @@
           "no": 116,
           "label": "ตอนที่ 116",
           "sources": [
-            {
-              "platform": "mynovel",
-              "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/razHENayCL9nsAC6W0rkVHta"
-            },
             {
               "platform": "readrealm",
               "url": "https://readrealm.co/comic/chapter/YxNE0lDwrZV12w4a7oOB"
@@ -1707,15 +1699,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/v15YWVDlJ2HjAPh51fuWzny2"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/bq5a1xlMXNa7E3ovWjXY",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1726,15 +1709,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/PZPPl39b1qEhDg2keMV9kcJm"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/ymPRoenwEWo67pr7A5g1",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1745,15 +1719,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/aBrOSCsFsU6ae26sTcY6Z1Lx"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/5LPWOoqMy7ZxO3dnQZ80",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1764,15 +1729,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/tynu8NDifPLr6NZWxXsiEgbK"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/5LPWOoqMy7LdB3dnQZ80",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1783,15 +1739,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/HptF5EdIY5MWJGNoBTq0ew9L"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/qbmY7yDMxZxjn3jzKBLl",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1802,15 +1749,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/6CRWv6iigf9YAysLMFW1h41k"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/d9yzLJPM2RbjdMa7kxQq",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1821,15 +1759,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/z3Fem28fUON7ihNcDIOrboaJ"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/VDONZd6MNYKXowmkLe4P",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1840,15 +1769,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/FN4w9sUqNJ9EGqFUUG1QLlUo"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/QGvx6EjwbZWnow0Xz98Y",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1859,15 +1779,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/djATBMagUE7iyeDQrGqf45Ny"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/6oqPdBV30aBXZwjxnr5l",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1878,15 +1789,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/RWb0jTrnjRAfJya2j0FTwqZm"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/Yz98JGlwjNJ80wEZXPn1",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1897,15 +1799,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/90KkwOCShzifvAGO5Po9o8jW"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/QGvx6EjwbZR1Jw0Xz98Y",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1916,15 +1809,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/s38mVs25pmtKwTj8FizWg5Cz"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/QWXJL2yMd8b6JMvlEobg",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1935,15 +1819,6 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/liARxh4JOciAiQnwUn6VMSwe"
-            },
-            {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/9rd85a6pG10xkwx4BGEq",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
             }
           ]
         },
@@ -1954,20 +1829,31 @@
             {
               "platform": "mynovel",
               "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/uxuxjLBFI1MH6yDEkQcpYU40"
-            },
+            }
+          ]
+        },
+        {
+          "no": 165,
+          "label": "ตอนที่ 165",
+          "sources": [
             {
-              "platform": "readrealm",
-              "url": "https://readrealm.co/comic/chapter/QGvx6EjwbZ9Alw0Xz98Y",
-              "access": {
-                "type": "coin",
-                "label": "coin",
-                "amount": 2
-              }
+              "platform": "mynovel",
+              "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/5QjR8GWRS7fSnUlVD80qK8Kn"
+            }
+          ]
+        },
+        {
+          "no": 166,
+          "label": "ตอนที่ 166",
+          "sources": [
+            {
+              "platform": "mynovel",
+              "url": "https://mynovel.co/book/6500e510950c49eb3cdcaf32/chapter/gzDKMG1GicgnISL3QewS1Lgx"
             }
           ]
         }
       ],
-      "latest": "164"
+      "latest": "166"
     },
     {
       "id": "ghost-era",
@@ -12759,9 +12645,39 @@
               }
             }
           ]
+        },
+        {
+          "no": 51,
+          "label": "ตอนที่ 51",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/QPqxZ1awJKLVmMoYXk82",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
+        },
+        {
+          "no": 52,
+          "label": "ตอนที่ 52",
+          "sources": [
+            {
+              "platform": "readrealm",
+              "url": "https://readrealm.co/comic/chapter/6d7mRYPMY1eXLM1yxe5Z",
+              "access": {
+                "type": "coin",
+                "label": "coin",
+                "amount": 1.5
+              }
+            }
+          ]
         }
       ],
-      "latest": "50"
+      "latest": "52"
     },
     {
       "id": "rank-f-hunter",
